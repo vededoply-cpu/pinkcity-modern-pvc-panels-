@@ -302,6 +302,14 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1rem;
 }
 
+.cta-short {
+  display: none;
+}
+
+.cta-full {
+  display: inline;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -1282,32 +1290,41 @@ select.form-control option {
 }
 
 @media (max-width: 768px) {
+  .cta-full {
+    display: none;
+  }
+  .cta-short {
+    display: inline;
+    font-weight: 700;
+  }
+
   .navbar {
-    padding: 0.75rem 0;
+    padding: 0.6rem 0;
   }
 
   .mobile-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     border-radius: var(--radius-sm);
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid var(--glass-border);
     cursor: pointer;
     z-index: 1001;
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    flex-shrink: 0;
   }
 
   .nav-links {
     position: fixed;
-    top: 62px;
+    top: 58px;
     right: 0;
     width: 270px;
     max-width: 80vw;
-    height: calc(100vh - 62px);
+    height: calc(100vh - 58px);
     background: rgba(9, 14, 26, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -1334,18 +1351,22 @@ select.form-control option {
   }
 
   .brand-logo {
-    gap: 0.5rem;
+    gap: 0.4rem;
+    min-width: 0;
+    flex-shrink: 1;
   }
 
   .brand-logo-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 0.95rem;
-    border-radius: 8px;
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    flex-shrink: 0;
   }
 
   .brand-name {
-    font-size: 0.92rem;
+    font-size: 0.85rem;
+    font-weight: 800;
     white-space: nowrap;
   }
 
@@ -1356,13 +1377,16 @@ select.form-control option {
   .nav-cta {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
+    flex-shrink: 0;
   }
 
   .nav-cta .btn {
-    padding: 0.45rem 0.75rem;
-    font-size: 0.75rem;
-    white-space: nowrap;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.3px;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
   }
 
   .hero {
@@ -1419,19 +1443,25 @@ select.form-control option {
 
 @media (max-width: 480px) {
   .brand-name {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
   }
 
   .brand-logo-icon {
-    width: 28px;
-    height: 28px;
-    font-size: 0.85rem;
+    width: 26px;
+    height: 26px;
+    font-size: 0.8rem;
     border-radius: 6px;
   }
 
   .nav-cta .btn {
-    padding: 0.4rem 0.65rem;
-    font-size: 0.72rem;
+    padding: 0.3rem 0.55rem;
+    font-size: 0.7rem;
+  }
+
+  .mobile-toggle {
+    width: 34px;
+    height: 34px;
+    font-size: 0.95rem;
   }
 
   .stats-bar {
