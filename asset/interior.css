@@ -1481,3 +1481,457 @@ select.form-control option {
     min-height: 300px;
   }
 }
+
+/* ==================== MOBILE FLOATING QUICK CONTACT WIDGET ==================== */
+.mobile-float-container {
+  display: none; /* Hidden on desktop by default */
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Horizontal Pill-shaped Row */
+.mobile-float-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: #ffffff;
+  padding: 10px 18px;
+  border-radius: 50px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px) scale(0.92);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), visibility 0.3s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Active open state */
+.mobile-float-container.active .mobile-float-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Individual Pill Buttons */
+.float-icon-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.35rem;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.float-icon-btn:hover, .float-icon-btn:active {
+  transform: scale(1.12);
+}
+
+.whatsapp-btn {
+  background: #25D366;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+}
+
+.chat-btn {
+  background: #00a2ff;
+  box-shadow: 0 4px 14px rgba(0, 162, 255, 0.4);
+}
+
+.call-btn {
+  background: #2563eb;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+/* Main Orange Trigger Button */
+.mobile-float-toggle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b00, #ff4500);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 8px 25px rgba(255, 69, 0, 0.5), 0 0 15px rgba(255, 107, 0, 0.3);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mobile-float-toggle:active {
+  transform: scale(0.92);
+}
+
+.mobile-float-toggle .toggle-icon {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mobile-float-container.active .mobile-float-toggle .toggle-icon {
+  transform: rotate(135deg);
+}
+
+/* Visible ONLY on mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .mobile-float-container {
+    display: flex;
+  }
+  .whatsapp-float {
+    display: none !important;
+  }
+}
+
+/* ==================== 1. TOP SCROLL PROGRESS BAR ==================== */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan), #25D366);
+  z-index: 100000;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+  transition: width 0.1s ease-out;
+}
+
+/* ==================== 2. REAL-TIME ROOM VISUALIZER ==================== */
+.visualizer-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.visualizer-stage {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(0, 180, 216, 0.2);
+  border: 1px solid var(--glass-border);
+}
+
+.visualizer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease, transform 0.6s ease;
+}
+
+.visualizer-overlay-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(9, 14, 26, 0.95) 0%, rgba(9, 14, 26, 0.7) 60%, transparent 100%);
+  padding: 2.5rem 2rem 1.8rem 2rem;
+  backdrop-filter: blur(8px);
+}
+
+.swatch-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.swatch-btn {
+  background: var(--surface-card);
+  border: 1px solid var(--glass-border);
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.swatch-btn:hover, .swatch-btn.active {
+  background: var(--surface-hover);
+  border-color: var(--accent-gold);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gold-glow);
+}
+
+.swatch-btn.active {
+  border-width: 2px;
+}
+
+.swatch-preview-color {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* ==================== 3. BEFORE / AFTER TRANSFORMATION SLIDER ==================== */
+.ba-slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 480px;
+  margin: 2rem auto 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--glass-border);
+  user-select: none;
+}
+
+.ba-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.ba-before-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.ba-before-wrapper .ba-img {
+  width: 1000px; /* Match max-width of container */
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ba-label {
+  position: absolute;
+  top: 1.2rem;
+  padding: 0.35rem 0.9rem;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #fff;
+  backdrop-filter: blur(6px);
+  z-index: 4;
+}
+
+.ba-label-before {
+  left: 1.2rem;
+}
+
+.ba-label-after {
+  right: 1.2rem;
+}
+
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: var(--accent-gold);
+  z-index: 5;
+  cursor: ew-resize;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
+
+.ba-handle-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  border: 2px solid #fff;
+}
+
+/* ==================== 4. INSTANT RENOVATION COST CALCULATOR ==================== */
+.calculator-card {
+  background: var(--primary-navy);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
+  margin-top: 2rem;
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.calc-range {
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: #1e293b;
+  outline: none;
+  accent-color: var(--accent-gold);
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.calc-results {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: var(--radius-md);
+  padding: 1.8rem;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+.calc-result-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.calc-result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed rgba(255,255,255,0.1);
+  font-size: 0.95rem;
+}
+
+.calc-result-item.highlight {
+  border-bottom: none;
+  padding-top: 0.5rem;
+
+  .calc-label {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+}
+
+.price-tag {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* ==================== 5. LIVE SOCIAL PROOF TOAST WIDGET ==================== */
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid var(--accent-cyan);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 20px rgba(0, 180, 216, 0.25);
+  backdrop-filter: blur(12px);
+  z-index: 9999;
+  transform: translateY(100px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease, visibility 0.4s;
+  max-width: 380px;
+}
+
+.toast-notification.show {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.toast-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 180, 216, 0.15);
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.toast-content {
+  flex: 1;
+}
+
+.toast-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+}
+
+.toast-message {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.toast-close {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.toast-close:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .calculator-grid {
+    grid-template-columns: 1fr;
+  }
+  .visualizer-stage, .ba-slider-container {
+    height: 320px;
+  }
+  .toast-notification {
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    width: 90%;
+  }
+  .toast-notification.show {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+

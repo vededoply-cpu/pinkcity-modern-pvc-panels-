@@ -268,4 +268,227 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const statsSection = document.querySelector('.stats-bar');
   if (statsSection) observer.observe(statsSection);
+
+  // --- 9. Mobile Floating Contact Menu Toggle ---
+  const floatToggle = document.getElementById('mobileFloatToggle');
+  const floatContainer = document.getElementById('mobileFloatContainer');
+  const floatChatTrigger = document.getElementById('floatChatTrigger');
+
+  if (floatToggle && floatContainer) {
+    floatToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      floatContainer.classList.toggle('active');
+    });
+
+    // Close menu when clicking anywhere outside
+    document.addEventListener('click', (e) => {
+      if (!floatContainer.contains(e.target)) {
+        floatContainer.classList.remove('active');
+      }
+    });
+  }
+
+  // Open Inquiry Quote modal on Chat trigger click
+  if (floatChatTrigger) {
+    floatChatTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const quoteModal = document.getElementById('quoteModal');
+      if (quoteModal) {
+        quoteModal.classList.add('active');
+      } else {
+        window.location.href = 'index.html#contact';
+      }
+      if (floatContainer) {
+        floatContainer.classList.remove('active');
+      }
+    });
+  }
+
+  // --- 10. Top Scroll Progress Bar ---
+  const scrollProgressBar = document.getElementById('scrollProgressBar');
+  window.addEventListener('scroll', () => {
+    if (scrollProgressBar) {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      scrollProgressBar.style.width = scrolled + '%';
+    }
+  });
+
+  // --- 11. Real-Time Room Wall Visualizer ---
+  const visualizerImg = document.getElementById('visualizerImage');
+  const visualizerBadge = document.getElementById('visualizerBadge');
+  const visualizerTitle = document.getElementById('visualizerTitle');
+  const visualizerDesc = document.getElementById('visualizerDesc');
+  const visualizerPrice = document.getElementById('visualizerPrice');
+  const visualizerCta = document.getElementById('visualizerCta');
+  const swatchBtns = document.querySelectorAll('.swatch-btn');
+
+  if (swatchBtns.length && visualizerImg) {
+    swatchBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        swatchBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const img = btn.getAttribute('data-img');
+        const badge = btn.getAttribute('data-badge');
+        const title = btn.getAttribute('data-title');
+        const desc = btn.getAttribute('data-desc');
+        const price = btn.getAttribute('data-price');
+
+        visualizerImg.style.opacity = '0.3';
+        setTimeout(() => {
+          if (img) visualizerImg.src = img;
+          if (badge && visualizerBadge) visualizerBadge.innerText = badge;
+          if (title && visualizerTitle) visualizerTitle.innerText = title;
+          if (desc && visualizerDesc) visualizerDesc.innerText = desc;
+          if (price && visualizerPrice) visualizerPrice.innerText = price;
+          if (visualizerCta && title) visualizerCta.setAttribute('data-product-name', title);
+          visualizerImg.style.opacity = '1';
+        }, 200);
+      });
+    });
+  }
+
+  // --- 12. Before / After Transformation Slider ---
+  const baContainer = document.getElementById('baSlider');
+  const baBeforeWrapper = document.getElementById('baBeforeWrapper');
+  const baHandle = document.getElementById('baHandle');
+
+  if (baContainer && baBeforeWrapper && baHandle) {
+    let isDraggingBA = false;
+
+    const updateBASlider = (x) => {
+      const rect = baContainer.getBoundingClientRect();
+      let offsetX = x - rect.left;
+      if (offsetX < 0) offsetX = 0;
+      if (offsetX > rect.width) offsetX = rect.width;
+      const percentage = (offsetX / rect.width) * 100;
+      baBeforeWrapper.style.width = percentage + '%';
+      baHandle.style.left = percentage + '%';
+    };
+
+    baContainer.addEventListener('mousedown', (e) => {
+      isDraggingBA = true;
+      updateBASlider(e.clientX);
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDraggingBA = false;
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (isDraggingBA) updateBASlider(e.clientX);
+    });
+
+    baContainer.addEventListener('touchstart', (e) => {
+      isDraggingBA = true;
+      if (e.touches.length > 0) updateBASlider(e.touches[0].clientX);
+    });
+
+    window.addEventListener('touchend', () => {
+      isDraggingBA = false;
+    });
+
+    window.addEventListener('touchmove', (e) => {
+      if (isDraggingBA && e.touches.length > 0) updateBASlider(e.touches[0].clientX);
+    });
+  }
+
+  // --- 13. Instant Wall Renovation Cost Calculator ---
+  const calcLength = document.getElementById('calcLength');
+  const calcHeight = document.getElementById('calcHeight');
+  const calcPanelType = document.getElementById('calcPanelType');
+
+  const valLength = document.getElementById('valLength');
+  const valHeight = document.getElementById('valHeight');
+  const calcTotalArea = document.getElementById('calcTotalArea');
+  const calcPanelsCount = document.getElementById('calcPanelsCount');
+  const calcEstimatedCost = document.getElementById('calcEstimatedCost');
+  const btnCalcApplyQuote = document.getElementById('btnCalcApplyQuote');
+
+  const updateCalculator = () => {
+    if (!calcLength || !calcHeight || !calcPanelType) return;
+    const len = parseFloat(calcLength.value) || 12;
+    const hgt = parseFloat(calcHeight.value) || 10;
+    const pricePerSqFt = parseFloat(calcPanelType.value) || 110;
+
+    if (valLength) valLength.innerText = len + ' ft';
+    if (valHeight) valHeight.innerText = hgt + ' ft';
+
+    const totalArea = Math.round(len * hgt);
+    const panelsCount = Math.ceil(totalArea / 9.6);
+    const totalCost = Math.round(totalArea * pricePerSqFt);
+
+    if (calcTotalArea) calcTotalArea.innerText = totalArea + ' sq.ft';
+    if (calcPanelsCount) calcPanelsCount.innerText = '~' + panelsCount + ' Panels';
+    if (calcEstimatedCost) calcEstimatedCost.innerText = '₹' + totalCost.toLocaleString('en-IN');
+  };
+
+  if (calcLength && calcHeight && calcPanelType) {
+    calcLength.addEventListener('input', updateCalculator);
+    calcHeight.addEventListener('input', updateCalculator);
+    calcPanelType.addEventListener('change', updateCalculator);
+    updateCalculator();
+  }
+
+  if (btnCalcApplyQuote) {
+    btnCalcApplyQuote.addEventListener('click', () => {
+      const quoteModal = document.getElementById('quoteModal');
+      const quoteProduct = document.getElementById('quoteProduct');
+      const quoteQuantity = document.getElementById('quoteQuantity');
+      const len = calcLength ? calcLength.value : 12;
+      const hgt = calcHeight ? calcHeight.value : 10;
+      const selectedOption = calcPanelType ? calcPanelType.options[calcPanelType.selectedIndex].text : '';
+
+      if (quoteQuantity) {
+        quoteQuantity.value = `${len}ft x ${hgt}ft (${calcTotalArea ? calcTotalArea.innerText : ''}) - Est ${calcEstimatedCost ? calcEstimatedCost.innerText : ''}`;
+      }
+      if (quoteModal) {
+        quoteModal.classList.add('active');
+      }
+    });
+  }
+
+  // --- 14. Live Social Proof Toast Notifications ---
+  const toastWidget = document.getElementById('toastNotification');
+  const toastTitle = document.getElementById('toastTitle');
+  const toastMessage = document.getElementById('toastMessage');
+  const closeToast = document.getElementById('closeToast');
+
+  if (toastWidget && toastTitle && toastMessage) {
+    const notifications = [
+      { title: "✨ Sample Kit Request", msg: "Architect from Jaipur requested Swatch Box (3 mins ago)" },
+      { title: "🔥 Wholesale Order", msg: "Interior Firm from Delhi booked 1,200 sq.ft Fluted Panels" },
+      { title: "⭐ Swatch Inquiry", msg: "Designer from Mumbai requested Charcoal Matte samples" },
+      { title: "✅ Instant Quote", msg: "Project estimate generated for 850 sq.ft in Ahmedabad" },
+      { title: "🏛️ Hotel Project", msg: "Distributor partnership inquiry received from Surat" }
+    ];
+
+    let toastIdx = 0;
+
+    const showNextToast = () => {
+      toastIdx = (toastIdx + 1) % notifications.length;
+      toastTitle.innerText = notifications[toastIdx].title;
+      toastMessage.innerText = notifications[toastIdx].msg;
+
+      toastWidget.classList.add('show');
+      setTimeout(() => {
+        toastWidget.classList.remove('show');
+      }, 4500);
+    };
+
+    setTimeout(() => {
+      showNextToast();
+      setInterval(showNextToast, 16000);
+    }, 4000);
+
+    if (closeToast) {
+      closeToast.addEventListener('click', () => {
+        toastWidget.classList.remove('show');
+      });
+    }
+  }
 });
+
+
