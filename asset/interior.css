@@ -1798,10 +1798,11 @@ select.form-control option {
   border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-lg);
   margin-top: 2rem;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
 }
 
 .calculator-grid {
@@ -1809,20 +1810,31 @@ select.form-control option {
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
   align-items: center;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
 }
 
 .calc-inputs, .calc-results {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
 }
 
-.calc-range {
-  width: 100%;
-  max-width: 100%;
+.calc-inputs .form-group {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+input[type=range].calc-range, .calc-range {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
   height: 8px;
   border-radius: 5px;
   background: #1e293b;
@@ -1830,17 +1842,20 @@ select.form-control option {
   accent-color: var(--accent-gold);
   cursor: pointer;
   margin-top: 0.5rem;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
+  display: block !important;
 }
 
 .calc-inputs select.form-control {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
 }
+
 
 .calc-results {
   background: rgba(15, 23, 42, 0.9);
