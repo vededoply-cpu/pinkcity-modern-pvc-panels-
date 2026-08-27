@@ -23,6 +23,13 @@
   <!-- Top Scroll Progress Bar -->
   <div class="scroll-progress-bar" id="scrollProgressBar"></div>
 
+  <!-- Live Dynamic Activity Ticker Banner -->
+  <div class="live-ticker-banner">
+    <div class="live-ticker-dot"></div>
+    <span><strong>LIVE JAIPUR ACTIVITY:</strong> <span id="liveActivityText">19 Interior Designers & Architects in Jaipur requested ceiling samples today!</span></span>
+  </div>
+
+
   <!-- ==================== MAIN HEADER / NAVIGATION ==================== -->
   <header class="main-header">
     <div class="container">
@@ -181,6 +188,18 @@
         <!-- Visualizer Display Box -->
         <div class="visualizer-stage" id="visualizerStage">
           <img id="visualizerImage" src="hero page/1.jpg" alt="Selected PVC Panel Texture Wall Preview" class="visualizer-img">
+          
+          <!-- Dynamic Ambient Ceiling Lighting Control -->
+          <div style="position: absolute; top: 0.8rem; right: 0.8rem; z-index: 10; display: flex; align-items: center; gap: 6px; background: rgba(7,23,39,0.85); padding: 4px 10px; border-radius: 20px; border: 1px solid var(--glass-border);">
+            <span style="font-size: 0.72rem; color: rgba(255,255,255,0.9); font-weight: 600;"><i class="fa-solid fa-lightbulb" style="color: var(--accent-gold); margin-right: 4px;"></i> Ambient LED:</span>
+            <div class="led-btn-group">
+              <button type="button" class="led-btn active" data-led="default" title="Normal Daylight" style="background: #ffffff;"></button>
+              <button type="button" class="led-btn" data-led="warm" title="Warm Golden LED" style="background: #f59e0b;"></button>
+              <button type="button" class="led-btn" data-led="skyblue" title="Sky Blue Ambient LED" style="background: #38bdf8;"></button>
+              <button type="button" class="led-btn" data-led="sunset" title="Sunset Crimson Glow" style="background: #ef4444;"></button>
+            </div>
+          </div>
+
           
           <div class="visualizer-overlay-info">
             <span class="badge badge-gold" id="visualizerBadge">MODERN TEAK LOUVER</span>

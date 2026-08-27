@@ -2141,10 +2141,110 @@ input[type=range].calc-range::-webkit-slider-thumb {
     transform: translateX(-50%) translateY(100px) !important;
     width: 90% !important;
   }
-  .toast-notification.show {
-    transform: translateX(-50%) translateY(0) !important;
-  }
+/* ==========================================================================
+   DYNAMIC HYPER-LUXURY VISUAL EFFECTS & ANIMATIONS
+   ========================================================================== */
+
+/* --- Glowing Border Beam & 3D Tilt Hover Effects --- */
+.feature-card, .product-card, .calculator-card, .visualizer-stage {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
 }
+
+.feature-card:hover, .product-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(56, 189, 248, 0.25), 0 0 30px rgba(245, 158, 11, 0.2);
+  border-color: rgba(56, 189, 248, 0.6) !important;
+}
+
+/* --- Animated Glowing Badge Pulse --- */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.6); }
+  70% { box-shadow: 0 0 0 12px rgba(56, 189, 248, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+}
+
+.pulse-badge {
+  animation: pulseGlow 2s infinite;
+}
+
+/* --- Ambient LED Lighting Swapper Filters for Visualizer --- */
+.visualizer-stage {
+  transition: filter 0.5s ease;
+}
+
+.visualizer-stage.led-warm #visualizerImage {
+  filter: brightness(1.08) contrast(1.05) sepia(0.2) drop-shadow(0 0 25px rgba(245, 158, 11, 0.5));
+}
+
+.visualizer-stage.led-skyblue #visualizerImage {
+  filter: brightness(1.1) contrast(1.1) hue-rotate(180deg) saturate(1.4) drop-shadow(0 0 30px rgba(56, 189, 248, 0.6));
+}
+
+.visualizer-stage.led-white #visualizerImage {
+  filter: brightness(1.2) contrast(1.15) saturate(1.1);
+}
+
+.visualizer-stage.led-sunset #visualizerImage {
+  filter: brightness(1.05) contrast(1.1) hue-rotate(330deg) saturate(1.5) drop-shadow(0 0 30px rgba(239, 68, 68, 0.5));
+}
+
+/* --- Live Dynamic Activity Ticker Banner --- */
+.live-ticker-banner {
+  background: linear-gradient(90deg, rgba(7, 23, 39, 0.95), rgba(14, 42, 71, 0.95), rgba(7, 23, 39, 0.95));
+  border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 0.5rem 1rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 999;
+}
+
+.live-ticker-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+  animation: pulseDot 1.5s infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.led-btn-group {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.led-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.led-btn:hover, .led-btn.active {
+  transform: scale(1.25);
+  border-color: #fff;
+  box-shadow: 0 0 12px currentColor;
+}
+
 
 
 

@@ -489,6 +489,26 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  // --- 15. Ambient LED Ceiling Lighting Swapper ---
+  const ledBtns = document.querySelectorAll('.led-btn');
+  const visualizerStage = document.getElementById('visualizerStage');
+
+  if (ledBtns.length && visualizerStage) {
+    ledBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        ledBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const mode = btn.getAttribute('data-led');
+        visualizerStage.className = 'visualizer-stage';
+        if (mode && mode !== 'default') {
+          visualizerStage.classList.add(`led-${mode}`);
+        }
+      });
+    });
+  }
 });
+
 
 
