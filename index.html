@@ -513,8 +513,11 @@
         </a>
       </div>
     </div>
-    <!-- ==================== INSTANT ROOM RENOVATION COST CALCULATOR ==================== -->
+  </section>
+
+  <!-- ==================== INSTANT ROOM RENOVATION COST CALCULATOR ==================== -->
   <section class="section" id="calculator" style="background: var(--surface-card); border-top: 1px solid var(--glass-border);">
+
     <div class="container">
       <div class="section-header text-center">
         <span class="section-subtitle">TRANSPARENT BUDGET ESTIMATOR</span>
@@ -540,9 +543,9 @@
 
             <div class="form-group" style="margin-top: 1.5rem;">
               <label class="form-label" for="calcPanelType">Select PVC Panel Category</label>
-              <select id="calcPanelType" class="form-control" style="background: var(--primary-dark); color: #fff;">
-                <option value="85" data-name="PVC Solid Louver Panel">PVC Solid Louver Panel (₹85 / sq.ft)</option>
-                <option value="110" data-name="Gold Strip Fluted Panel" selected>Gold Strip Decorative Fluted Panel (₹110 / sq.ft)</option>
+              <select id="calcPanelType" class="form-control" style="background: var(--primary-dark); color: #fff; width: 100%; max-width: 100%;">
+                <option value="85" data-name="PVC Solid Louver Panel">PVC Solid Louver (₹85 / sq.ft)</option>
+                <option value="110" data-name="Gold Strip Fluted Panel" selected>Gold Strip Fluted Panel (₹110 / sq.ft)</option>
                 <option value="95" data-name="2G Laminated Wall Panel">2G Laminated Wall Panel (₹95 / sq.ft)</option>
                 <option value="130" data-name="Charcoal Matte Luxury Series">Charcoal Matte Series (₹130 / sq.ft)</option>
                 <option value="125" data-name="Metallic Bronze Louvers">Metallic Bronze Louvers (₹125 / sq.ft)</option>
@@ -561,7 +564,7 @@
               </div>
 
               <div class="calc-result-item">
-                <span class="calc-label" style="color: var(--text-muted);">Panels Needed (8ft x 1.2ft std)</span>
+                <span class="calc-label" style="color: var(--text-muted);">Panels Needed</span>
                 <span class="calc-value" id="calcPanelsCount" style="font-weight: 700; color: #fff;">~13 Panels</span>
               </div>
 
@@ -571,10 +574,11 @@
               </div>
             </div>
 
-            <button type="button" class="btn btn-gold" id="btnCalcApplyQuote" style="width: 100%; margin-top: 1.2rem; padding: 0.85rem; font-size: 0.95rem;">
-              <i class="fa-brands fa-whatsapp" style="margin-right: 6px;"></i> Request Official Quote for this Budget
+            <button type="button" class="btn btn-gold" id="btnCalcApplyQuote" style="width: 100%; margin-top: 1.2rem; padding: 0.75rem 0.5rem; font-size: 0.9rem;">
+              <i class="fa-brands fa-whatsapp" style="margin-right: 6px;"></i> Request Official Quote
             </button>
           </div>
+
         </div>
       </div>
     </div>
