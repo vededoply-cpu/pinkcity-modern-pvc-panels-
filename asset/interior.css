@@ -1411,8 +1411,11 @@ select.form-control option {
 
   .specs-table-container {
     overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
     -webkit-overflow-scrolling: touch;
   }
+
 
   .specs-table {
     min-width: 650px;
@@ -1718,11 +1721,12 @@ select.form-control option {
 }
 
 .ba-before-wrapper .ba-img {
-  width: 1000px; /* Match max-width of container */
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 
 /* --- Container Utility --- */
 .container {
