@@ -1832,19 +1832,43 @@ select.form-control option {
 }
 
 input[type=range].calc-range, .calc-range {
+  -webkit-appearance: none !important;
+  appearance: none !important;
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
-  height: 8px;
-  border-radius: 5px;
-  background: #1e293b;
-  outline: none;
-  accent-color: var(--accent-gold);
-  cursor: pointer;
-  margin-top: 0.5rem;
+  height: 8px !important;
+  border-radius: 5px !important;
+  background: #1e293b !important;
+  outline: none !important;
+  accent-color: var(--accent-gold) !important;
+  cursor: pointer !important;
+  margin-top: 0.5rem !important;
   box-sizing: border-box !important;
   display: block !important;
+  overflow: hidden !important;
 }
+
+input[type=range].calc-range::-webkit-slider-runnable-track {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 8px !important;
+  background: #1e293b !important;
+  border-radius: 5px !important;
+}
+
+input[type=range].calc-range::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50% !important;
+  background: var(--accent-gold) !important;
+  cursor: pointer !important;
+  margin-top: -6px !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8) !important;
+}
+
 
 .calc-inputs select.form-control {
   width: 100% !important;
