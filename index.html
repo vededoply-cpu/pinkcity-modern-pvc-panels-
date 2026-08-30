@@ -26,7 +26,8 @@
   <!-- Live Dynamic Activity Ticker Banner -->
   <div class="live-ticker-banner">
     <div class="live-ticker-dot"></div>
-    <span><strong>LIVE JAIPUR ACTIVITY:</strong> <span id="liveActivityText">19 Interior Designers & Architects in Jaipur requested ceiling samples today!</span></span>
+    <span><strong>LIVE JAIPUR ACTIVITY:</strong> <span id="liveActivityText">19 Interior Designers & Architects in
+        Jaipur requested ceiling samples today!</span></span>
   </div>
 
 
@@ -46,12 +47,12 @@
 
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="#dynamic-showcase" class="nav-link">Interior Showcase</a></li>
           <li><a href="#visualizer" class="nav-link">Visualizer</a></li>
           <li><a href="#calculator" class="nav-link">Calculator</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
           <li><a href="products.html" class="nav-link">Products</a></li>
-          <li><a href="tech-specs.html" class="nav-link">Tech Specs</a></li>
-          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
         </ul>
 
 
@@ -173,6 +174,600 @@
     </div>
   </section>
 
+  <!-- ==================== VIRTUAL VIDEO CINEMA THEATRE SECTION ==================== -->
+  <section class="section cinema-section-wrapper" id="cinema-theatre" style="text-align: center !important;">
+    <div class="cinema-ambient-glow"></div>
+    <div class="container" style="position: relative; z-index: 5; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; margin: 0 auto !important; text-align: center !important; width: 100% !important;">
+      <div class="cinema-header-wrapper text-center" style="margin-bottom: 2rem; width: 100%;">
+        <div class="cinema-badge" style="background: rgba(223, 172, 66, 0.15); border: 1px solid rgba(223, 172, 66, 0.4); color: var(--accent-gold); padding: 0.4rem 1.2rem; border-radius: 99px; font-size: 0.8rem; font-weight: 800; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+          <i class="fa-solid fa-film"></i> ARCHITECTURAL CINEMA THEATRE
+        </div>
+        <h2 class="cinema-title" style="font-size: 2.5rem; font-weight: 800;">Virtual Project Walkthroughs</h2>
+        <p style="color: rgba(224, 242, 254, 0.8); max-width: 700px; margin: 0.5rem auto 0 auto; font-size: 1rem;">
+          Watch live video demonstrations of Pinkcity Modern PVC Panels, fluted acoustic louvers, and luxury ceiling transformations in real site installations.
+        </p>
+      </div>
+
+      <!-- Video Selector Tabs -->
+      <div class="cinema-dual-selector" style="display: flex !important; justify-content: center !important; align-items: center !important; gap: 1rem !important; margin: 0 auto 1.5rem auto !important; width: 100% !important; max-width: 650px !important; flex-wrap: wrap !important;">
+        <button class="cinema-select-btn cinema-tab-btn active" data-video-src="videos/1.mp4" data-video-title="01. Luxury Residence Installation Walkthrough" data-video-id="v1">
+          <i class="fa-solid fa-circle-play"></i>
+          <span>01. Residence Walkthrough</span>
+        </button>
+        <button class="cinema-select-btn cinema-tab-btn" data-video-src="videos/2.mp4" data-video-title="02. Fluted Louver & Decorative Ceiling Transformation" data-video-id="v2">
+          <i class="fa-solid fa-circle-play"></i>
+          <span>02. Louver & Ceiling Reveal</span>
+        </button>
+      </div>
+
+      <!-- Main Cinema Player Card -->
+      <div class="cinema-stage-card" style="width: 100% !important; max-width: 650px !important; margin: 0 auto !important; border-radius: 16px !important; overflow: hidden !important; box-shadow: 0 20px 50px rgba(0,0,0,0.8) !important; border: 1px solid rgba(223, 172, 66, 0.35) !important; background: #090d14 !important; display: block !important;">
+        <div class="cinema-video-frame" style="width: 100% !important; max-width: 650px !important; height: 360px !important; max-height: 360px !important; background: #000 !important; display: block !important; overflow: hidden !important; position: relative !important; margin: 0 auto !important;">
+          <video id="cinemaMainVideo" playsinline poster="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.36 AM.jpeg" controls style="width: 100% !important; height: 360px !important; max-height: 360px !important; max-width: 650px !important; object-fit: cover !important; object-position: center !important; margin: 0 auto !important; display: block !important; background: #000 !important;">
+            <source src="videos/1.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+        <div class="cinema-player-info-bar">
+          <div class="cinema-title-tag">
+            <span class="hd-badge">4K UHD</span>
+            <span id="cinemaVideoTagText">01. Luxury Residence Installation Walkthrough</span>
+          </div>
+          <span class="live-tag"><i class="fa-solid fa-eye"></i> REAL SITE INSIGHTS</span>
+        </div>
+      </div>
+
+      <!-- Secondary Video Cards -->
+      <div class="cinema-thumbs-grid" style="width: 100% !important; max-width: 650px !important; margin: 1.5rem auto 0 auto !important;">
+        <div class="cinema-thumb-card active" data-video-src="videos/1.mp4" data-video-title="01. Luxury Residence Installation Walkthrough" data-video-id="v1">
+          <div class="cinema-thumb-img-box">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.36 AM.jpeg" alt="Video 1 Thumbnail">
+            <div class="cinema-thumb-play-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <div class="cinema-thumb-info">
+            <h4>Project Video 1</h4>
+            <p>Full Wall & Ceiling PVC Panel Installation Walkthrough</p>
+          </div>
+        </div>
+
+        <div class="cinema-thumb-card" data-video-src="videos/2.mp4" data-video-title="02. Fluted Louver & Decorative Ceiling Transformation" data-video-id="v2">
+          <div class="cinema-thumb-img-box">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM (2).jpeg" alt="Video 2 Thumbnail">
+            <div class="cinema-thumb-play-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <div class="cinema-thumb-info">
+            <h4>Project Video 2</h4>
+            <p>Golden Fluted Louver & Ceiling Surface Finish Reveal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== NON-TEMPLATED ARCHITECTURAL BENTO SHOWCASE GRID (19 DYNAMIC GRAPHICS) ==================== -->
+  <section class="section section-dark" id="dynamic-showcase" style="background: #090d14;">
+    <div class="container">
+      <div class="showcase-header text-center" style="margin-bottom: 2rem;">
+        <span class="section-subtitle">EXCLUSIVE 3D ARCHITECTURAL COLLECTION</span>
+        <h2 class="section-title" style="font-size: 2.8rem;">Dynamic Interior Surface Showcase</h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 800px; margin: 0.5rem auto 0 auto;">
+          Explore all 19 dynamic graphic renders & real-site installations of our 2G Laminated PVC Panels, acoustic fluted louvers, and luxury marble ceilings in an asymmetric architectural Bento layout.
+        </p>
+      </div>
+
+      <!-- Bento Category Filter Chips -->
+      <div class="bento-filter-bar">
+        <button class="bento-filter-btn active" data-bento-filter="all">All 19 Graphic Concepts</button>
+        <button class="bento-filter-btn" data-bento-filter="tv-louver">TV Unit & Living</button>
+        <button class="bento-filter-btn" data-bento-filter="fluted">Gold & Charcoal Fluted</button>
+        <button class="bento-filter-btn" data-bento-filter="bedroom">Bedroom Suites</button>
+        <button class="bento-filter-btn" data-bento-filter="ceiling">Ceiling & UV Marble</button>
+      </div>
+
+      <!-- 19 Image Architectural Bento Grid -->
+      <div class="bento-architectural-grid">
+
+        <!-- Card 1: HERO TILE (Span 8) -->
+        <div class="bento-tile bento-span-8 bento-hero-tile" data-category="tv-louver">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.36 AM.jpeg" alt="Royal Teak Wood Fluted TV Unit Accent">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill gold-tag"><i class="fa-solid fa-crown"></i> Master Hero Design</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.36 AM.jpeg" data-caption="Royal Teak Wood Fluted TV Unit Accent - 2G Hot-Melt Lamination">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Royal Teak Wood Fluted TV Unit Backdrop</h3>
+              <p class="bento-desc">Deep wood texture realism combined with warm ambient LED backlighting for modern living halls.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-shield-halved"></i> 2G Hot-Melt Laminated</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Royal Teak Wood Fluted TV Unit Backdrop">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: TALL TILE (Span 4) -->
+        <div class="bento-tile bento-span-4 bento-tall-tile" data-category="fluted">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.37 AM (1).jpeg" alt="Contemporary Gold Strip Fluted Louver">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill">Gold Inlay Trim</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.37 AM (1).jpeg" data-caption="Contemporary Gold Strip Fluted Louver - Metallic Brass Accent">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Gold Inlay Fluted Louver</h3>
+              <p class="bento-desc">High-density charcoal louver embedded with brush-finished metallic gold strips.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-gem"></i> Metallic Brass</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Gold Inlay Fluted Louver">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: STANDARD TILE (Span 4) -->
+        <div class="bento-tile bento-span-4 bento-standard-tile" data-category="tv-louver">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.37 AM.jpeg" alt="Midnight Slate Grey Acoustic Louver">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill">Acoustic Series</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.37 AM.jpeg" data-caption="Midnight Slate Grey Acoustic Louver - Anti-Scratch Finish">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Midnight Slate Acoustic Louver</h3>
+              <p class="bento-desc">Matte slate architectural profile designed for acoustic damping in home theatres.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-volume-xmark"></i> Sound Proof</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Midnight Slate Acoustic Louver">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: STANDARD TILE (Span 4) -->
+        <div class="bento-tile bento-span-4 bento-standard-tile" data-category="bedroom">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM (1).jpeg" alt="Master Bedroom Headboard Fluted Backdrop">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill gold-tag">Bedroom Suite</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM (1).jpeg" data-caption="Master Bedroom Headboard Fluted Backdrop with Warm Ambient LED">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Master Bedroom Headboard Fluted Wall</h3>
+              <p class="bento-desc">Warm acoustic louver paneling creating a soothing luxury retreat atmosphere.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-lightbulb"></i> Ambient LED</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Master Bedroom Headboard Fluted Wall">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: STANDARD TILE (Span 4) -->
+        <div class="bento-tile bento-span-4 bento-standard-tile" data-category="fluted">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM (2).jpeg" alt="Golden Metallic Charcoal Feature Wall">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill">Charcoal Metallic</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM (2).jpeg" data-caption="Golden Metallic Charcoal Feature Wall - Fire Retardant B1">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Golden Metallic Charcoal Wall</h3>
+              <p class="bento-desc">Reflective metallic luster with deep fluted relief grooves for luxury feature walls.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-fire-flame-curved"></i> B1 Fire Safe</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Golden Metallic Charcoal Wall">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: WIDE TILE (Span 6) -->
+        <div class="bento-tile bento-span-6 bento-wide-tile" data-category="ceiling">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM.jpeg" alt="Dark Oak Architectural Louver Ceiling">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill gold-tag">Ceiling Louver</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM.jpeg" data-caption="Dark Oak Architectural Louver Ceiling - Tongue & Groove Joint">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Dark Oak Architectural Louver Ceiling</h3>
+              <p class="bento-desc">Precision extruded ceiling louvers providing high acoustic insulation and warm aesthetics.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-link"></i> Interlocking System</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Dark Oak Architectural Louver Ceiling">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7: WIDE TILE (Span 6) -->
+        <div class="bento-tile bento-span-6 bento-wide-tile" data-category="ceiling">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM (1).jpeg" alt="Carrara Italian Marble PVC UV Sheet">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill">Marble UV Sheet</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM (1).jpeg" data-caption="Carrara Italian Marble PVC UV Sheet - Mirror High Gloss">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Carrara Italian Marble PVC UV Sheet</h3>
+              <p class="bento-desc">Seamless high-gloss marble vein texture with scratch-resistant UV clear coating.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-sparkles"></i> High Gloss UV</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Carrara Italian Marble PVC UV Sheet">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8: STANDARD TILE (Span 4) -->
+        <div class="bento-tile bento-span-4 bento-standard-tile" data-category="tv-louver">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM (2).jpeg" alt="Minimalist Wood Slat Living Room Wall">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill">Living Room Slat</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM (2).jpeg" data-caption="Minimalist Wood Slat Living Room Wall - 100% Water Proof">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Minimalist Living Room Slat Wall</h3>
+              <p class="bento-desc">Clean vertical line shadow effects for contemporary high-ceiling living halls.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-droplet"></i> 100% Water Proof</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Minimalist Living Room Slat Wall">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 9: STANDARD TILE (Span 4) -->
+        <div class="bento-tile bento-span-4 bento-standard-tile" data-category="fluted">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM.jpeg" alt="Champagne Bronze Metallic Fluted Louver">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill gold-tag">Bronze Luxe</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM.jpeg" data-caption="Champagne Bronze Metallic Fluted Louver - High Scuff Resistance">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Champagne Bronze Metallic Louver</h3>
+              <p class="bento-desc">Warm bronze metallic undertones for high-end boutique hotels & luxury villas.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-wand-magic-sparkles"></i> Scuff Proof</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Champagne Bronze Metallic Louver">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 10: STANDARD TILE (Span 4) -->
+        <div class="bento-tile bento-span-4 bento-standard-tile" data-category="bedroom">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (1).jpeg" alt="Scandinavian Light Natural Oak Panel">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill">Oak Wood</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (1).jpeg" data-caption="Scandinavian Light Natural Oak Panel - Zero VOC Lead Free">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Scandinavian Light Oak Fluted Wall</h3>
+              <p class="bento-desc">Bright natural oak grain lamination ideal for compact bedroom accent walls.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-leaf"></i> Zero VOC Non-Toxic</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Scandinavian Light Oak Fluted Wall">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 11: WIDE TILE (Span 6) -->
+        <div class="bento-tile bento-span-6 bento-wide-tile" data-category="tv-louver">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (2).jpeg" alt="Executive Reception Desk Fluted Wall">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill">Corporate Foyer</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (2).jpeg" data-caption="Executive Reception Desk Fluted Wall - High Impact Resistance">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Corporate Reception Desk Cladding</h3>
+              <p class="bento-desc">Professional acoustic fluted wall panels designed for executive commercial interiors.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-building"></i> Commercial Grade</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Corporate Reception Desk Cladding">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 12: WIDE TILE (Span 6) -->
+        <div class="bento-tile bento-span-6 bento-wide-tile" data-category="ceiling">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (3).jpeg" alt="Architectural Cove Ceiling Louvers">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill gold-tag">Cove Lighting</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (3).jpeg" data-caption="Architectural Cove Ceiling Louvers - Seamless Interlock">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Architectural Cove Ceiling Louvers</h3>
+              <p class="bento-desc">Specially profiled ceiling louvers integrated with hidden LED cove light troughs.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-lightbulb"></i> LED Integrated</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Architectural Cove Ceiling Louvers">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 13: STANDARD TILE (Span 4) -->
+        <div class="bento-tile bento-span-4 bento-standard-tile" data-category="fluted">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM.jpeg" alt="Smoked Charcoal Gold Trim Panel">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill">Smoked Charcoal</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM.jpeg" data-caption="Smoked Charcoal Gold Trim Panel - 25-Year Durability">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Smoked Charcoal Gold Trim Panel</h3>
+              <p class="bento-desc">Matte black charcoal background with warm golden metallic linear dividers.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-certificate"></i> 25-Yr Guarantee</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Smoked Charcoal Gold Trim Panel">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 14: STANDARD TILE (Span 4) -->
+        <div class="bento-tile bento-span-4 bento-standard-tile" data-category="bedroom">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM (1).jpeg" alt="Modern Dining Feature Wall Louver">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill">Dining Accent</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM (1).jpeg" data-caption="Modern Dining Feature Wall Louver - Stain Resistant">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Dining Room Feature Louver Wall</h3>
+              <p class="bento-desc">Elegant vertical texture paneling resistant to food stains and humidity.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-hand-sparkles"></i> Stain Resistant</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Dining Room Feature Louver Wall">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 15: STANDARD TILE (Span 4) -->
+        <div class="bento-tile bento-span-4 bento-standard-tile" data-category="tv-louver">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM (2).jpeg" alt="Luxury Villa Entryway Fluted Louver">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill gold-tag">Villa Foyer</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM (2).jpeg" data-caption="Luxury Villa Entryway Fluted Louver - Termite Free">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Luxury Villa Entry Foyer Louvers</h3>
+              <p class="bento-desc">Grand entrance wall feature crafted from high-density termite-proof PVC louvers.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-bug-slash"></i> Termite Proof</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Luxury Villa Entry Foyer Louvers">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 16: STANDARD TILE (Span 4) -->
+        <div class="bento-tile bento-span-4 bento-standard-tile" data-category="fluted">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM.jpeg" alt="Geometric Acoustic PVC Slat Wall">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill">Acoustic Slat</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM.jpeg" data-caption="Geometric Acoustic PVC Slat Wall - Sound Absorption">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Geometric Acoustic Slat Wall</h3>
+              <p class="bento-desc">Noise-dampening fluted geometry ideal for home theatres and studio spaces.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-wave-square"></i> Noise Dampening</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Geometric Acoustic Slat Wall">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 17: STANDARD TILE (Span 4) -->
+        <div class="bento-tile bento-span-4 bento-standard-tile" data-category="tv-louver">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM (1).jpeg" alt="Natural Teak Vertical Fluted Panel">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill">Natural Teak</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM (1).jpeg" data-caption="Natural Teak Vertical Fluted Panel - High Density PVC">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Natural Teak Vertical Fluted Wall</h3>
+              <p class="bento-desc">Classic warm teak wood tone extruded with ultra-precise surface grain depth.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-tree"></i> Wood Grain Realism</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Natural Teak Vertical Fluted Wall">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 18: STANDARD TILE (Span 4) -->
+        <div class="bento-tile bento-span-4 bento-standard-tile" data-category="fluted">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM (2).jpeg" alt="Luxury Lounge Bar Fluted Gold Louver">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill gold-tag">Gold Inlay</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM (2).jpeg" data-caption="Luxury Lounge Bar Fluted Gold Louver - Scratch Proof 2G">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title">Lounge Bar Gold Inlay Louvers</h3>
+              <p class="bento-desc">Dramatic dark backdrop accented with lustrous metallic gold vertical strips.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-star"></i> 2G Hot-Melt Bond</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Lounge Bar Gold Inlay Louvers">
+                Request Swatch <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 19: FULL-WIDTH MASTER BANNER (Span 12) -->
+        <div class="bento-tile bento-span-12 bento-wide-tile" data-category="bedroom" style="min-height: 380px;">
+          <div class="bento-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM.jpeg" alt="Master Bed Acoustic Fluted Wall">
+            <div class="bento-glass-shine"></div>
+            <div class="bento-badge-container">
+              <span class="bento-tag-pill gold-tag"><i class="fa-solid fa-trophy"></i> Masterpiece Suite</span>
+              <button class="bento-quick-zoom-btn trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM.jpeg" data-caption="Custom Master Bed Acoustic Fluted Wall - Hot-Melt Bonded">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          <div class="bento-content-panel">
+            <div>
+              <h3 class="bento-title" style="font-size: 1.5rem;">Bespoke Master Suite Acoustic Fluted Cladding</h3>
+              <p class="bento-desc">Architectural bedroom backdrop engineered with 2G hot-melt lamination for acoustic quiet, thermal insulation, and lifetime zero-maintenance durability.</p>
+            </div>
+            <div class="bento-footer">
+              <span class="bento-spec-text"><i class="fa-solid fa-award"></i> Architectural Grade Specification</span>
+              <button class="bento-action-btn open-quote-modal" data-product-name="Bespoke Master Suite Acoustic Fluted Cladding">
+                Get Instant Quote & Swatch Box <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
   <!-- ==================== REAL-TIME ROOM WALL VISUALIZER ==================== -->
   <section class="section section-dark" id="visualizer" style="border-top: 1px solid var(--glass-border);">
     <div class="container">
@@ -180,34 +775,49 @@
         <span class="section-subtitle">INTERACTIVE WALL PREVIEW TOOL</span>
         <h2 class="section-title">Live Room Wall Texture Visualizer</h2>
         <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">
-          Select different premium louver textures below to preview how Pinkcity Modern PVC Panels transform a luxury interior space in real time.
+          Select different premium louver textures below to preview how Pinkcity Modern PVC Panels transform a luxury
+          interior space in real time.
         </p>
       </div>
 
       <div class="visualizer-wrapper">
         <!-- Visualizer Display Box -->
         <div class="visualizer-stage" id="visualizerStage">
-          <img id="visualizerImage" src="hero page/1.jpg" alt="Selected PVC Panel Texture Wall Preview" class="visualizer-img">
-          
+          <img id="visualizerImage" src="hero page/1.jpg" alt="Selected PVC Panel Texture Wall Preview"
+            class="visualizer-img">
+
           <!-- Dynamic Ambient Ceiling Lighting Control -->
-          <div style="position: absolute; top: 0.8rem; right: 0.8rem; z-index: 10; display: flex; align-items: center; gap: 6px; background: rgba(7,23,39,0.85); padding: 4px 10px; border-radius: 20px; border: 1px solid var(--glass-border);">
-            <span style="font-size: 0.72rem; color: rgba(255,255,255,0.9); font-weight: 600;"><i class="fa-solid fa-lightbulb" style="color: var(--accent-gold); margin-right: 4px;"></i> Ambient LED:</span>
+          <div
+            style="position: absolute; top: 0.8rem; right: 0.8rem; z-index: 10; display: flex; align-items: center; gap: 6px; background: rgba(7,23,39,0.85); padding: 4px 10px; border-radius: 20px; border: 1px solid var(--glass-border);">
+            <span style="font-size: 0.72rem; color: rgba(255,255,255,0.9); font-weight: 600;"><i
+                class="fa-solid fa-lightbulb" style="color: var(--accent-gold); margin-right: 4px;"></i> Ambient
+              LED:</span>
             <div class="led-btn-group">
-              <button type="button" class="led-btn active" data-led="default" title="Normal Daylight" style="background: #ffffff;"></button>
-              <button type="button" class="led-btn" data-led="warm" title="Warm Golden LED" style="background: #f59e0b;"></button>
-              <button type="button" class="led-btn" data-led="skyblue" title="Sky Blue Ambient LED" style="background: #38bdf8;"></button>
-              <button type="button" class="led-btn" data-led="sunset" title="Sunset Crimson Glow" style="background: #ef4444;"></button>
+              <button type="button" class="led-btn active" data-led="default" title="Normal Daylight"
+                style="background: #ffffff;"></button>
+              <button type="button" class="led-btn" data-led="warm" title="Warm Golden LED"
+                style="background: #f59e0b;"></button>
+              <button type="button" class="led-btn" data-led="skyblue" title="Sky Blue Ambient LED"
+                style="background: #38bdf8;"></button>
+              <button type="button" class="led-btn" data-led="sunset" title="Sunset Crimson Glow"
+                style="background: #ef4444;"></button>
             </div>
           </div>
 
-          
+
           <div class="visualizer-overlay-info">
             <span class="badge badge-gold" id="visualizerBadge">MODERN TEAK LOUVER</span>
-            <h3 id="visualizerTitle" style="font-size: 1.4rem; color: #fff; margin-top: 0.3rem;">Royal Natural Teak Wood Fluted Panel</h3>
-            <p id="visualizerDesc" style="color: rgba(255,255,255,0.8); font-size: 0.85rem;">2G Hot-melt lamination with natural wood grain texture realism & acoustic dampening depth.</p>
+            <h3 id="visualizerTitle" style="font-size: 1.4rem; color: #fff; margin-top: 0.3rem;">Royal Natural Teak Wood
+              Fluted Panel</h3>
+            <p id="visualizerDesc" style="color: rgba(255,255,255,0.8); font-size: 0.85rem;">2G Hot-melt lamination with
+              natural wood grain texture realism & acoustic dampening depth.</p>
             <div style="margin-top: 0.8rem; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-              <span class="badge" style="background: rgba(0, 180, 216, 0.2); color: var(--accent-cyan); border: 1px solid var(--accent-cyan);" id="visualizerPrice">Est: ₹85 / Sq. Ft.</span>
-              <button class="btn btn-gold open-quote-modal" id="visualizerCta" data-product-name="Royal Natural Teak Wood Fluted Panel" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">
+              <span class="badge"
+                style="background: rgba(0, 180, 216, 0.2); color: var(--accent-cyan); border: 1px solid var(--accent-cyan);"
+                id="visualizerPrice">Est: ₹85 / Sq. Ft.</span>
+              <button class="btn btn-gold open-quote-modal" id="visualizerCta"
+                data-product-name="Royal Natural Teak Wood Fluted Panel"
+                style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">
                 <i class="fa-brands fa-whatsapp" style="margin-right: 5px;"></i> Request Swatches for this Texture
               </button>
             </div>
@@ -216,27 +826,43 @@
 
         <!-- Swatch Selector Chips -->
         <div class="swatch-selector-grid">
-          <button type="button" class="swatch-btn active" data-img="hero page/1.jpg" data-badge="MODERN TEAK LOUVER" data-title="Royal Natural Teak Wood Fluted Panel" data-desc="2G Hot-melt lamination with natural wood grain texture realism & acoustic dampening depth." data-price="Est: ₹85 / Sq. Ft.">
+          <button type="button" class="swatch-btn active" data-img="hero page/1.jpg" data-badge="MODERN TEAK LOUVER"
+            data-title="Royal Natural Teak Wood Fluted Panel"
+            data-desc="2G Hot-melt lamination with natural wood grain texture realism & acoustic dampening depth."
+            data-price="Est: ₹85 / Sq. Ft.">
             <div class="swatch-preview-color" style="background: linear-gradient(135deg, #8B4513, #CD853F);"></div>
             <span>Teak Wood</span>
           </button>
-          
-          <button type="button" class="swatch-btn" data-img="hero page/2.jpg" data-badge="GOLD STRIP CHARCOAL" data-title="Midnight Charcoal with Metallic Gold Strip" data-desc="Ultra-luxurious deep charcoal louvers with embedded brushed brass gold inlay strips." data-price="Est: ₹110 / Sq. Ft.">
+
+          <button type="button" class="swatch-btn" data-img="hero page/2.jpg" data-badge="GOLD STRIP CHARCOAL"
+            data-title="Midnight Charcoal with Metallic Gold Strip"
+            data-desc="Ultra-luxurious deep charcoal louvers with embedded brushed brass gold inlay strips."
+            data-price="Est: ₹110 / Sq. Ft.">
             <div class="swatch-preview-color" style="background: linear-gradient(135deg, #111111, #d4af37);"></div>
             <span>Gold & Charcoal</span>
           </button>
 
-          <button type="button" class="swatch-btn" data-img="hero page/3.jpg" data-badge="ITALIAN MARBLE GLOW" data-title="Carrara White Italian Marble PVC Panel" data-desc="High-gloss waterproof polymer panel replicating rare polished Italian marble vein movement." data-price="Est: ₹95 / Sq. Ft.">
+          <button type="button" class="swatch-btn" data-img="hero page/3.jpg" data-badge="ITALIAN MARBLE GLOW"
+            data-title="Carrara White Italian Marble PVC Panel"
+            data-desc="High-gloss waterproof polymer panel replicating rare polished Italian marble vein movement."
+            data-price="Est: ₹95 / Sq. Ft.">
             <div class="swatch-preview-color" style="background: linear-gradient(135deg, #e0e0e0, #ffffff);"></div>
             <span>Italian Marble</span>
           </button>
 
-          <button type="button" class="swatch-btn" data-img="hero page/4.webp" data-badge="MATTE CHARCOAL LOUVER" data-title="Architectural Matte Slate Grey Panel" data-desc="Anti-fingerprint matte slate louver designed for minimalist modern living rooms & offices." data-price="Est: ₹105 / Sq. Ft.">
+          <button type="button" class="swatch-btn" data-img="hero page/4.webp" data-badge="MATTE CHARCOAL LOUVER"
+            data-title="Architectural Matte Slate Grey Panel"
+            data-desc="Anti-fingerprint matte slate louver designed for minimalist modern living rooms & offices."
+            data-price="Est: ₹105 / Sq. Ft.">
             <div class="swatch-preview-color" style="background: linear-gradient(135deg, #2b2b2b, #4a4a4a);"></div>
             <span>Matte Slate</span>
           </button>
 
-          <button type="button" class="swatch-btn" data-img="image file/WhatsApp Image 2026-08-25 at 11.54.49 AM (3).jpeg" data-badge="BRONZE METALLIC LUXE" data-title="Champagne Metallic Bronze Fluted Wall" data-desc="Reflective metallic luster finish with high scratch resistance for hotel lobbies & master suites." data-price="Est: ₹125 / Sq. Ft.">
+          <button type="button" class="swatch-btn"
+            data-img="image file/WhatsApp Image 2026-08-25 at 11.54.49 AM (3).jpeg" data-badge="BRONZE METALLIC LUXE"
+            data-title="Champagne Metallic Bronze Fluted Wall"
+            data-desc="Reflective metallic luster finish with high scratch resistance for hotel lobbies & master suites."
+            data-price="Est: ₹125 / Sq. Ft.">
             <div class="swatch-preview-color" style="background: linear-gradient(135deg, #b87333, #e5aa70);"></div>
             <span>Metallic Bronze</span>
           </button>
@@ -248,16 +874,18 @@
         <div class="section-header text-center">
           <span class="section-subtitle">TRANSFORMATION REVEAL</span>
           <h2 class="section-title">Plain Wall vs Luxury 3D Panel Renovation</h2>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Drag the divider left or right to see how Pinkcity Modern PVC Panels turn a plain wall into a masterpiece.</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Drag the divider left or right to see how Pinkcity
+            Modern PVC Panels turn a plain wall into a masterpiece.</p>
         </div>
 
         <div class="ba-slider-container" id="baSlider">
           <!-- After Image (Bottom) -->
           <img src="hero page/2.jpg" alt="After PVC Panel Renovation" class="ba-img ba-after">
-          
+
           <!-- Before Image (Top Clipped) -->
           <div class="ba-before-wrapper" id="baBeforeWrapper">
-            <img src="hero page/1.jpg" alt="Before Bare Wall" class="ba-img ba-before" style="filter: grayscale(80%) brightness(0.6);">
+            <img src="hero page/1.jpg" alt="Before Bare Wall" class="ba-img ba-before"
+              style="filter: grayscale(80%) brightness(0.6);">
             <span class="ba-label ba-label-before">Bare Wall</span>
           </div>
 
@@ -538,7 +1166,8 @@
   </section>
 
   <!-- ==================== INSTANT ROOM RENOVATION COST CALCULATOR ==================== -->
-  <section class="section" id="calculator" style="background: var(--surface-card); border-top: 1px solid var(--glass-border);">
+  <section class="section" id="calculator"
+    style="background: var(--surface-card); border-top: 1px solid var(--glass-border);">
 
     <div class="container">
       <div class="section-header text-center">
@@ -554,22 +1183,27 @@
           <!-- Left Column: Inputs -->
           <div class="calc-inputs">
             <div class="form-group">
-              <label class="form-label" for="calcLength">Wall Length / Width (Feet): <strong id="valLength" style="color: var(--accent-cyan);">12 ft</strong></label>
+              <label class="form-label" for="calcLength">Wall Length / Width (Feet): <strong id="valLength"
+                  style="color: var(--accent-cyan);">12 ft</strong></label>
               <input type="range" id="calcLength" min="4" max="50" value="12" step="0.5" class="calc-range">
             </div>
 
             <div class="form-group" style="margin-top: 1.5rem;">
-              <label class="form-label" for="calcHeight">Wall Height (Feet): <strong id="valHeight" style="color: var(--accent-cyan);">10 ft</strong></label>
+              <label class="form-label" for="calcHeight">Wall Height (Feet): <strong id="valHeight"
+                  style="color: var(--accent-cyan);">10 ft</strong></label>
               <input type="range" id="calcHeight" min="4" max="20" value="10" step="0.5" class="calc-range">
             </div>
 
             <div class="form-group" style="margin-top: 1.5rem;">
               <label class="form-label" for="calcPanelType">Select PVC Panel Category</label>
-              <select id="calcPanelType" class="form-control" style="background: var(--primary-dark); color: #fff; width: 100%; max-width: 100%;">
+              <select id="calcPanelType" class="form-control"
+                style="background: var(--primary-dark); color: #fff; width: 100%; max-width: 100%;">
                 <option value="85" data-name="PVC Solid Louver Panel">PVC Solid Louver (₹85 / sq.ft)</option>
-                <option value="110" data-name="Gold Strip Fluted Panel" selected>Gold Strip Fluted Panel (₹110 / sq.ft)</option>
+                <option value="110" data-name="Gold Strip Fluted Panel" selected>Gold Strip Fluted Panel (₹110 / sq.ft)
+                </option>
                 <option value="95" data-name="2G Laminated Wall Panel">2G Laminated Wall Panel (₹95 / sq.ft)</option>
-                <option value="130" data-name="Charcoal Matte Luxury Series">Charcoal Matte Series (₹130 / sq.ft)</option>
+                <option value="130" data-name="Charcoal Matte Luxury Series">Charcoal Matte Series (₹130 / sq.ft)
+                </option>
                 <option value="125" data-name="Metallic Bronze Louvers">Metallic Bronze Louvers (₹125 / sq.ft)</option>
               </select>
             </div>
@@ -577,8 +1211,9 @@
 
           <!-- Right Column: Outputs -->
           <div class="calc-results">
-            <h3 style="font-size: 1.2rem; color: var(--accent-gold); margin-bottom: 1.2rem; text-align: center;">Estimated Requirements</h3>
-            
+            <h3 style="font-size: 1.2rem; color: var(--accent-gold); margin-bottom: 1.2rem; text-align: center;">
+              Estimated Requirements</h3>
+
             <div class="calc-result-box">
               <div class="calc-result-item">
                 <span class="calc-label" style="color: var(--text-muted);">Total Wall Area</span>
@@ -596,7 +1231,8 @@
               </div>
             </div>
 
-            <button type="button" class="btn btn-gold" id="btnCalcApplyQuote" style="width: 100%; margin-top: 1.2rem; padding: 0.75rem 0.5rem; font-size: 0.9rem;">
+            <button type="button" class="btn btn-gold" id="btnCalcApplyQuote"
+              style="width: 100%; margin-top: 1.2rem; padding: 0.75rem 0.5rem; font-size: 0.9rem;">
               <i class="fa-brands fa-whatsapp" style="margin-right: 6px;"></i> Request Official Quote
             </button>
           </div>
@@ -673,7 +1309,9 @@
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 Jaipur Ceiling Experts. All Rights Reserved. Designed & Developed by <a href="https://edoply.com" target="_blank" style="color: var(--accent-gold); font-weight: 700; text-decoration: underline;">edoply.com</a>.</div>
+        <div>&copy; 2026 Jaipur Ceiling Experts. All Rights Reserved. Designed & Developed by <a
+            href="https://edoply.com" target="_blank"
+            style="color: var(--accent-gold); font-weight: 700; text-decoration: underline;">edoply.com</a>.</div>
 
 
         <div>
@@ -688,7 +1326,8 @@
   <!-- ==================== MOBILE FLOATING QUICK CONTACT WIDGET ==================== -->
   <div class="mobile-float-container" id="mobileFloatContainer">
     <div class="mobile-float-menu" id="mobileFloatMenu">
-      <a href="https://wa.me/919913273760?text=Hello%20Pinkcity%20Modern%20PVC%20Panels,%20I%20am%20interested%20in%20your%20PVC%20Louvers%20and%20Wall%20Panels." class="float-icon-btn whatsapp-btn" target="_blank" title="WhatsApp">
+      <a href="https://wa.me/919913273760?text=Hello%20Pinkcity%20Modern%20PVC%20Panels,%20I%20am%20interested%20in%20your%20PVC%20Louvers%20and%20Wall%20Panels."
+        class="float-icon-btn whatsapp-btn" target="_blank" title="WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
       </a>
       <button type="button" class="float-icon-btn chat-btn" id="floatChatTrigger" title="Chat / Inquiry">
@@ -716,7 +1355,7 @@
   </div>
 
 
-  <!-- ==================== INQUIRY / SAMPLE REQUEST MODAL ==================== -->
+  <!-- ==================== INQUIRY / SAMPLE REQUEST MODAL  ==================== -->
   <div class="modal-backdrop" id="quoteModal">
     <div class="modal-content">
       <button class="modal-close" id="closeQuoteModal">&times;</button>

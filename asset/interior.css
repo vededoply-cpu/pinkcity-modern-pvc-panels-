@@ -2245,8 +2245,1076 @@ input[type=range].calc-range::-webkit-slider-thumb {
   box-shadow: 0 0 12px currentColor;
 }
 
+/* ==========================================================================
+   ULTRA-LUXURY VIRTUAL VIDEO CINEMA THEATRE & 19-IMAGE SHOWCASE STYLES
+   ========================================================================== */
+
+/* ==========================================================================
+   ARCHITECTURAL CINEMA THEATRE STYLES (CENTERED & SLEEK)
+   ========================================================================== */
+.cinema-section-wrapper {
+  background: radial-gradient(circle at 50% 30%, #131d30 0%, #090d14 100%) !important;
+  border-top: 1px solid rgba(223, 172, 66, 0.2);
+  border-bottom: 1px solid rgba(223, 172, 66, 0.2);
+  padding: 4.5rem 0 !important;
+  position: relative;
+  overflow: hidden;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+.cinema-section-wrapper .container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  max-width: 1280px !important;
+}
+
+.cinema-dual-selector {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  margin: 0 auto 1.5rem auto !important;
+  width: 100% !important;
+  max-width: 680px !important;
+  flex-wrap: wrap !important;
+}
+
+.cinema-select-btn, .cinema-tab-btn {
+  background: rgba(16, 25, 41, 0.85);
+  border: 1px solid rgba(223, 172, 66, 0.25);
+  color: #ffffff;
+  padding: 0.75rem 1.6rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.cinema-select-btn.active, .cinema-tab-btn.active {
+  background: linear-gradient(135deg, rgba(223, 172, 66, 0.25), rgba(16, 25, 41, 0.95));
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 25px rgba(223, 172, 66, 0.3);
+  color: #ffffff;
+}
+
+.cinema-stage-card, .cinema-player-card {
+  position: relative !important;
+  z-index: 5 !important;
+  background: #090d14 !important;
+  border: 1px solid rgba(223, 172, 66, 0.35) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(223, 172, 66, 0.2) !important;
+  width: 100% !important;
+  max-width: 680px !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+.cinema-video-frame, .cinema-video-container {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 680px !important;
+  height: 380px !important;
+  max-height: 380px !important;
+  background: #000000 !important;
+  display: block !important;
+  overflow: hidden !important;
+  margin: 0 auto !important;
+}
+
+.cinema-video-frame video, .cinema-video-container video, #cinemaMainVideo {
+  width: 100% !important;
+  height: 380px !important;
+  max-height: 380px !important;
+  max-width: 680px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  background: #000000 !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+.cinema-player-info-bar {
+  padding: 0.85rem 1.25rem;
+  background: rgba(9, 13, 20, 0.98);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cinema-title-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.hd-badge {
+  background: var(--accent-gold);
+  color: #090d14;
+  font-weight: 800;
+  font-size: 0.68rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.live-tag {
+  font-size: 0.78rem;
+  color: var(--accent-gold);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cinema-thumbs-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.25rem !important;
+  margin: 1.5rem auto 0 auto !important;
+  width: 100% !important;
+  max-width: 680px !important;
+}
+
+.cinema-thumb-card {
+  position: relative;
+  background: var(--surface-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.cinema-thumb-card:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-gold-glow);
+}
+
+.cinema-thumb-card.active {
+  border-color: var(--accent-gold);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, var(--surface-hover) 100%);
+}
+
+.cinema-thumb-img-box {
+  position: relative;
+  width: 100px;
+  height: 70px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cinema-thumb-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cinema-thumb-play-icon {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.cinema-thumb-card:hover .cinema-thumb-play-icon {
+  background: rgba(245, 158, 11, 0.7);
+  color: #000;
+}
+
+.cinema-thumb-info h4 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.cinema-thumb-info p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
 
 
+/* --- DYNAMIC 19-IMAGE INTERIOR SHOWCASE SECTION --- */
+.section-showcase-19 {
+  background: var(--primary-dark);
+  position: relative;
+  border-top: 1px solid var(--glass-border);
+  padding: 5.5rem 0;
+}
+
+.showcase-header {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 3rem auto;
+}
+
+.showcase-filter-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.showcase-filter-chip {
+  background: rgba(14, 42, 71, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: var(--text-muted);
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  backdrop-filter: blur(8px);
+}
+
+.showcase-filter-chip:hover {
+  border-color: var(--accent-gold);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.showcase-filter-chip.active {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #d4af37 100%);
+  color: #071727;
+  font-weight: 700;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+}
+
+.showcase-grid-19 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.75rem;
+}
+
+.showcase-card-19 {
+  position: relative;
+  background: var(--surface-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  transition: var(--transition-smooth);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.showcase-card-19:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--accent-gold);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(245, 158, 11, 0.3);
+}
+
+.showcase-img-box {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: #060d15;
+}
+
+.showcase-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showcase-card-19:hover .showcase-img-box img {
+  transform: scale(1.1);
+}
+
+.showcase-tag-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(7, 23, 39, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--accent-cyan);
+  color: var(--accent-cyan);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.showcase-tag-badge.gold {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold-light);
+}
+
+.showcase-zoom-trigger {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(7, 23, 39, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: var(--transition-fast);
+  z-index: 2;
+}
+
+.showcase-card-19:hover .showcase-zoom-trigger {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.showcase-zoom-trigger:hover {
+  background: var(--accent-gold);
+  color: #000;
+  border-color: var(--accent-gold);
+}
+
+.showcase-content-box {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.showcase-title-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+  line-height: 1.35;
+}
+
+.showcase-desc-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.showcase-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 0.75rem;
+}
+
+.showcase-spec-chip {
+  font-size: 0.75rem;
+  color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.showcase-inquiry-btn {
+  font-size: 0.8rem;
+  color: var(--accent-gold);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.showcase-inquiry-btn:hover {
+  color: #ffffff;
+}
+
+/* Lightbox Enhancements */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-content-box {
+  position: relative;
+  max-width: 950px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-content-box img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  color: #fff;
+  font-size: 2rem;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.lightbox-close-btn:hover {
+  color: var(--accent-gold);
+}
+
+.lightbox-caption-text {
+  margin-top: 1rem;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ==========================================================================
+   NON-TEMPLATED ARCHITECTURAL BENTO GRID & DYNAMIC LUXURY STYLES
+   ========================================================================== */
+
+/* --- Dynamic Bento Architecture Grid (19 Graphics) --- */
+.bento-architectural-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  perspective: 1200px;
+}
+
+.bento-tile {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(16, 25, 41, 0.7);
+  border: 1px solid rgba(223, 172, 66, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.45s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.bento-tile:hover {
+  border-color: rgba(223, 172, 66, 0.6);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(223, 172, 66, 0.25);
+  z-index: 10;
+}
+
+/* Bento Tile Span Variances for Non-Templated Asymmetric Design */
+.bento-span-8 {
+  grid-column: span 8;
+}
+
+.bento-span-6 {
+  grid-column: span 6;
+}
+
+.bento-span-4 {
+  grid-column: span 4;
+}
+
+.bento-span-3 {
+  grid-column: span 3;
+}
+
+.bento-span-12 {
+  grid-column: span 12;
+}
+
+.bento-row-span-2 {
+  grid-row: span 2;
+}
+
+.bento-hero-tile {
+  min-height: 480px;
+}
+
+.bento-tall-tile {
+  min-height: 520px;
+}
+
+.bento-standard-tile {
+  min-height: 380px;
+}
+
+.bento-wide-tile {
+  min-height: 320px;
+}
+
+/* Bento Image Frame & Hover Zoom Lens */
+.bento-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.bento-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+.bento-tile:hover .bento-img-wrapper img {
+  transform: scale(1.08);
+}
+
+/* 3D Glass Light Reflective Overlay */
+.bento-glass-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.75s ease;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.bento-tile:hover .bento-glass-shine {
+  left: 150%;
+}
+
+/* Bento Luxury Badge Tags */
+.bento-badge-container {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.bento-tag-pill {
+  padding: 0.35rem 0.85rem;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: rgba(9, 13, 20, 0.85);
+  color: var(--accent-gold);
+  border: 1px solid rgba(223, 172, 66, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.bento-tag-pill.gold-tag {
+  background: linear-gradient(135deg, rgba(223, 172, 66, 0.9), rgba(184, 134, 11, 0.9));
+  color: #090d14;
+  border: none;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba(223, 172, 66, 0.4);
+}
+
+.bento-quick-zoom-btn {
+  pointer-events: auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(9, 13, 20, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.bento-quick-zoom-btn:hover {
+  background: var(--accent-gold);
+  color: #090d14;
+  transform: scale(1.15) rotate(90deg);
+}
+
+/* Bento Info Content Overlay Box */
+.bento-content-panel {
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(180deg, rgba(16, 25, 41, 0.85) 0%, rgba(9, 13, 20, 0.98) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  z-index: 4;
+}
+
+.bento-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.bento-desc {
+  font-size: 0.85rem;
+  color: rgba(224, 242, 254, 0.75);
+  line-height: 1.5;
+}
+
+.bento-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.bento-spec-text {
+  font-size: 0.75rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.bento-action-btn {
+  background: rgba(223, 172, 66, 0.12);
+  border: 1px solid rgba(223, 172, 66, 0.3);
+  color: var(--accent-gold);
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.bento-action-btn:hover {
+  background: var(--accent-gold);
+  color: #090d14;
+  box-shadow: 0 4px 15px rgba(223, 172, 66, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Dynamic Filter Chips Bar */
+.bento-filter-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.bento-filter-btn {
+  background: rgba(16, 25, 41, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.6rem 1.4rem;
+  border-radius: 99px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.bento-filter-btn:hover {
+  border-color: var(--accent-gold);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.bento-filter-btn.active {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #c48b28 100%);
+  color: #090d14;
+  font-weight: 800;
+  border-color: var(--accent-gold);
+  box-shadow: 0 6px 20px rgba(223, 172, 66, 0.35);
+}
 
 
+/* --- 4K Architectural Cinema Theatre Ambient Experience --- */
+.cinema-section-wrapper {
+  background: radial-gradient(circle at 50% 30%, #131d30 0%, #090d14 100%);
+  border-top: 1px solid rgba(223, 172, 66, 0.2);
+  border-bottom: 1px solid rgba(223, 172, 66, 0.2);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cinema-ambient-glow {
+  position: absolute;
+  inset: -10%;
+  background: radial-gradient(circle at 50% 50%, rgba(223, 172, 66, 0.15), rgba(56, 189, 248, 0.08), transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 1s ease;
+}
+
+.cinema-section-wrapper .container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  max-width: 1280px !important;
+}
+
+.cinema-stage-card {
+  position: relative !important;
+  z-index: 5 !important;
+  background: #090d14 !important;
+  border: 1px solid rgba(223, 172, 66, 0.35) !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(223, 172, 66, 0.2) !important;
+  width: 100% !important;
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+.cinema-video-frame {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 720px !important;
+  height: 400px !important;
+  max-height: 400px !important;
+  aspect-ratio: 16 / 9 !important;
+  background: #000 !important;
+  display: block !important;
+  overflow: hidden !important;
+  margin: 0 auto !important;
+}
+
+.cinema-video-frame video, #cinemaMainVideo {
+  width: 100% !important;
+  height: 400px !important;
+  max-height: 400px !important;
+  max-width: 720px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  background: #000 !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+.cinema-player-info-bar {
+  padding: 0.85rem 1.25rem;
+  background: rgba(9, 13, 20, 0.98);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cinema-title-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.hd-badge {
+  background: var(--accent-gold);
+  color: #090d14;
+  font-weight: 800;
+  font-size: 0.68rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.live-tag {
+  font-size: 0.78rem;
+  color: var(--accent-gold);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Cinema Dual Video Selector Bar */
+.cinema-dual-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  z-index: 5;
+  position: relative;
+}
+
+.cinema-select-btn {
+  background: rgba(16, 25, 41, 0.85);
+  border: 1px solid rgba(223, 172, 66, 0.25);
+  color: #ffffff;
+  padding: 0.85rem 1.8rem;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.35s ease;
+  backdrop-filter: blur(10px);
+}
+
+.cinema-select-btn i {
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+}
+
+.cinema-select-btn:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.cinema-select-btn.active {
+  background: linear-gradient(135deg, rgba(223, 172, 66, 0.2), rgba(16, 25, 41, 0.95));
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 25px rgba(223, 172, 66, 0.3);
+}
+
+.cinema-select-btn.active i {
+  color: #ffffff;
+}
+
+/* --- Dynamic Space Visualizer Simulator --- */
+.space-visualizer-wrapper {
+  background: rgba(16, 25, 41, 0.6);
+  border: 1px solid rgba(223, 172, 66, 0.2);
+  border-radius: 24px;
+  padding: 2.5rem;
+  margin-top: 3rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.sim-room-presets {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.sim-preset-btn {
+  background: rgba(9, 13, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.6rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.sim-preset-btn.active {
+  background: var(--accent-gold);
+  color: #090d14;
+  border-color: var(--accent-gold);
+  font-weight: 800;
+  box-shadow: 0 6px 20px rgba(223, 172, 66, 0.4);
+}
+
+.sim-display-viewport {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
+}
+
+.sim-display-viewport img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.sim-info-floating-card {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: rgba(9, 13, 20, 0.88);
+  border: 1px solid rgba(223, 172, 66, 0.3);
+  padding: 1rem 1.5rem;
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  max-width: 380px;
+  z-index: 5;
+}
+
+.sim-info-floating-card h4 {
+  font-size: 1.05rem;
+  color: var(--accent-gold);
+  margin-bottom: 0.3rem;
+}
+
+.sim-info-floating-card p {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Dynamic Texture Zoom Lens Magnifier Drawer */
+.swatch-inspector-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: rgba(6, 9, 15, 0.94);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.swatch-inspector-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.swatch-inspector-card {
+  background: rgba(16, 25, 41, 0.95);
+  border: 1px solid rgba(223, 172, 66, 0.4);
+  border-radius: 24px;
+  width: 90%;
+  max-width: 1050px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.9), 0 0 50px rgba(223, 172, 66, 0.2);
+  position: relative;
+}
+
+.swatch-inspector-img-box {
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+.swatch-inspector-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swatch-inspector-details {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Responsive Overrides for Bento Grid & Cinema */
+@media (max-width: 1024px) {
+  .bento-span-8, .bento-span-6, .bento-span-4, .bento-span-3 {
+    grid-column: span 6;
+  }
+  .bento-hero-tile, .bento-tall-tile, .bento-standard-tile {
+    min-height: 380px;
+  }
+  .swatch-inspector-card {
+    grid-template-columns: 1fr;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .bento-architectural-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .bento-span-8, .bento-span-6, .bento-span-4, .bento-span-3, .bento-span-12 {
+    grid-column: span 1;
+  }
+  .bento-hero-tile, .bento-tall-tile, .bento-standard-tile, .bento-wide-tile {
+    min-height: 340px;
+  }
+  .cinema-select-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.82rem;
+  }
+  .sim-display-viewport {
+    height: 320px;
+  }
+}
 

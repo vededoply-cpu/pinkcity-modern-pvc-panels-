@@ -508,7 +508,250 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // --- 16. VIRTUAL VIDEO CINEMA THEATRE PLAYER CONTROLLER ---
+  const cinemaVideo = document.getElementById('cinemaMainVideo');
+  const cinemaBigPlay = document.getElementById('cinemaBigPlay');
+  const cinemaPlayBtn = document.getElementById('cinemaPlayBtn');
+  const cinemaMuteBtn = document.getElementById('cinemaMuteBtn');
+  const cinemaFullscreenBtn = document.getElementById('cinemaFullscreenBtn');
+  const cinemaProgressBar = document.getElementById('cinemaProgressBar');
+  const cinemaTimeText = document.getElementById('cinemaTimeText');
+  const cinemaVideoTagText = document.getElementById('cinemaVideoTagText');
+
+  const cinemaTabBtns = document.querySelectorAll('.cinema-tab-btn');
+  const cinemaThumbCards = document.querySelectorAll('.cinema-thumb-card');
+  const cinemaPlayerCard = document.querySelector('.cinema-player-card');
+
+  if (cinemaVideo) {
+    // Play / Pause toggle function
+    const toggleCinemaPlay = () => {
+      if (cinemaVideo.paused) {
+        cinemaVideo.play();
+        if (cinemaBigPlay) cinemaBigPlay.style.display = 'none';
+        if (cinemaPlayBtn) cinemaPlayBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+        if (cinemaPlayerCard) cinemaPlayerCard.classList.remove('paused');
+      } else {
+        cinemaVideo.pause();
+        if (cinemaBigPlay) cinemaBigPlay.style.display = 'flex';
+        if (cinemaPlayBtn) cinemaPlayBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+        if (cinemaPlayerCard) cinemaPlayerCard.classList.add('paused');
+      }
+    };
+
+    if (cinemaBigPlay) cinemaBigPlay.addEventListener('click', toggleCinemaPlay);
+    if (cinemaPlayBtn) cinemaPlayBtn.addEventListener('click', toggleCinemaPlay);
+
+    // Mute toggle
+    if (cinemaMuteBtn) {
+      cinemaMuteBtn.addEventListener('click', () => {
+        cinemaVideo.muted = !cinemaVideo.muted;
+        if (cinemaVideo.muted) {
+          cinemaMuteBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+        } else {
+          cinemaMuteBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+        }
+      });
+    }
+
+    // Fullscreen toggle
+    if (cinemaFullscreenBtn) {
+      cinemaFullscreenBtn.addEventListener('click', () => {
+        if (cinemaVideo.requestFullscreen) {
+          cinemaVideo.requestFullscreen();
+        } else if (cinemaVideo.webkitRequestFullscreen) {
+          cinemaVideo.webkitRequestFullscreen();
+        }
+      });
+    }
+
+    // Progress bar update
+    cinemaVideo.addEventListener('timeupdate', () => {
+      if (cinemaVideo.duration && cinemaProgressBar) {
+        const progress = (cinemaVideo.currentTime / cinemaVideo.duration) * 100;
+        cinemaProgressBar.value = progress;
+
+        const curMin = Math.floor(cinemaVideo.currentTime / 60);
+        const curSec = Math.floor(cinemaVideo.currentTime % 60).toString().padStart(2, '0');
+        const durMin = Math.floor(cinemaVideo.duration / 60) || 0;
+        const durSec = Math.floor(cinemaVideo.duration % 60).toString().padStart(2, '0');
+
+        if (cinemaTimeText) {
+          cinemaTimeText.textContent = `${curMin}:${curSec} / ${durMin}:${durSec}`;
+        }
+      }
+    });
+
+    if (cinemaProgressBar) {
+      cinemaProgressBar.addEventListener('input', () => {
+        if (cinemaVideo.duration) {
+          const seekTime = (cinemaProgressBar.value / 100) * cinemaVideo.duration;
+          cinemaVideo.currentTime = seekTime;
+        }
+      });
+    }
+
+    // Video Switcher Function (between video 1.mp4 and 2.mp4)
+    const switchCinemaVideo = (videoSrc, videoTitle, videoId) => {
+      cinemaVideo.src = videoSrc;
+      cinemaVideo.load();
+      cinemaVideo.play().catch(e => console.log('Autoplay handled:', e));
+
+      if (cinemaBigPlay) cinemaBigPlay.style.display = 'none';
+      if (cinemaPlayBtn) cinemaPlayBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+      if (cinemaVideoTagText) cinemaVideoTagText.textContent = videoTitle;
+
+      // Update tabs active state
+      cinemaTabBtns.forEach(btn => {
+        if (btn.getAttribute('data-video-id') === videoId) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Update thumb cards active state
+      cinemaThumbCards.forEach(card => {
+        if (card.getAttribute('data-video-id') === videoId) {
+          card.classList.add('active');
+        } else {
+          card.classList.remove('active');
+        }
+      });
+    };
+
+    // Tab buttons event listeners
+    cinemaTabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const src = btn.getAttribute('data-video-src');
+        const title = btn.getAttribute('data-video-title');
+        const id = btn.getAttribute('data-video-id');
+        switchCinemaVideo(src, title, id);
+      });
+    });
+
+    // Thumb card event listeners
+    cinemaThumbCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const src = card.getAttribute('data-video-src');
+        const title = card.getAttribute('data-video-title');
+        const id = card.getAttribute('data-video-id');
+        switchCinemaVideo(src, title, id);
+      });
+    });
+  }
+
+  // --- 17. DYNAMIC 19-IMAGE SHOWCASE FILTER CONTROLLER ---
+  const showcaseFilterChips = document.querySelectorAll('.showcase-filter-chip');
+  const showcaseCards19 = document.querySelectorAll('.showcase-card-19');
+
+  showcaseFilterChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      showcaseFilterChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+
+      const filter = chip.getAttribute('data-showcase-filter');
+
+      showcaseCards19.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0) scale(1)';
+          }, 30);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(10px) scale(0.95)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 250);
+        }
+      });
+    });
+  });
+
+  // --- 18. ARCHITECTURAL BENTO GRID 3D PERSPECTIVE TILT ---
+  const bentoTiles = document.querySelectorAll('.bento-tile');
+  bentoTiles.forEach(tile => {
+    tile.addEventListener('mousemove', (e) => {
+      const rect = tile.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -7;
+      const rotateY = ((x - centerX) / centerX) * 7;
+
+      tile.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-6px)`;
+    });
+
+    tile.addEventListener('mouseleave', () => {
+      tile.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+    });
+  });
+
+  // --- 19. ARCHITECTURAL BENTO CATEGORY FILTERS ---
+  const bentoFilterBtns = document.querySelectorAll('.bento-filter-btn');
+  bentoFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      bentoFilterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-bento-filter');
+      bentoTiles.forEach(tile => {
+        const cat = tile.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          tile.style.display = 'flex';
+          setTimeout(() => {
+            tile.style.opacity = '1';
+            tile.style.transform = 'scale(1)';
+          }, 50);
+        } else {
+          tile.style.opacity = '0';
+          tile.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            tile.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
+
+  // --- 20. LIVE SPACE SIMULATOR ROOM PRESET SWITCHER ---
+  const simPresetBtns = document.querySelectorAll('.sim-preset-btn');
+  const simImg = document.getElementById('simDisplayImg');
+  const simTitle = document.getElementById('simTitle');
+  const simDesc = document.getElementById('simDesc');
+
+  if (simPresetBtns.length > 0 && simImg) {
+    simPresetBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        simPresetBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const imgSrc = btn.getAttribute('data-sim-img');
+        const title = btn.getAttribute('data-sim-title');
+        const desc = btn.getAttribute('data-sim-desc');
+
+        simImg.style.opacity = '0';
+        simImg.style.transform = 'scale(0.98)';
+
+        setTimeout(() => {
+          simImg.src = imgSrc;
+          if (simTitle) simTitle.textContent = title;
+          if (simDesc) simDesc.textContent = desc;
+          simImg.style.opacity = '1';
+          simImg.style.transform = 'scale(1)';
+        }, 300);
+      });
+    });
+  }
 });
+
+
 
 
 
