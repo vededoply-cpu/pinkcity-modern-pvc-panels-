@@ -15,13 +15,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- 1. Sticky Navigation & Scroll Header ---
+  // --- 1. Smart Sticky Navigation & Scroll Header with Hide/Show on Scroll Direction ---
   const header = document.querySelector('.main-header');
+  let lastScrollY = 0;
+  let scrollDirection = 'up';
+  
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    const currentScrollY = window.scrollY;
+    
+    // Detect scroll direction
+    if (currentScrollY > lastScrollY) {
+      scrollDirection = 'down';
+    } else {
+      scrollDirection = 'up';
+    }
+    lastScrollY = currentScrollY;
+    
+    // Add scrolled class after 100px
+    if (currentScrollY > 100) {
       header.classList.add('scrolled');
+      // Hide on scroll down, show on scroll up
+      if (scrollDirection === 'down' && currentScrollY > 200) {
+        header.classList.add('hidden');
+      } else {
+        header.classList.remove('hidden');
+      }
     } else {
       header.classList.remove('scrolled');
+      header.classList.remove('hidden');
     }
   });
 
@@ -49,6 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
     heroVideo.play().catch(err => {
       console.log('Video autoplay prevented by browser policy:', err);
     });
+
+    // Disable autoplay on mobile
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+      heroVideo.autoplay = false;
+      heroVideo.pause();
+    }
 
     let transitionTriggered = false;
 
@@ -160,36 +188,91 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 6. Video Preview Modal (Secondary Showcase Videos) ---
-  const videoModal = document.getElementById('videoModal');
-  const modalVideoPlayer = document.getElementById('modalVideoPlayer');
-  const closeVideoModal = document.getElementById('closeVideoModal');
-
-  document.querySelectorAll('.trigger-video-modal').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const videoSrc = btn.getAttribute('data-video-src');
-      if (modalVideoPlayer && videoModal) {
-        modalVideoPlayer.src = videoSrc;
-        videoModal.classList.add('active');
-        modalVideoPlayer.play();
-      }
-    });
-  });
-
-  if (closeVideoModal && videoModal) {
-    const stopModalVideo = () => {
-      videoModal.classList.remove('active');
-      if (modalVideoPlayer) {
-        modalVideoPlayer.pause();
-        modalVideoPlayer.src = '';
-      }
-    };
-    closeVideoModal.addEventListener('click', stopModalVideo);
-    videoModal.addEventListener('click', (e) => {
-      if (e.target === videoModal) stopModalVideo();
-    });
+  // --- 6. Project Video Modal/Lightbox with Hover Preview ---
+  const cinemaThumbCards = document.querySelectorAll('.cinema-thumb-card');
+  
+  // Create video modal if it doesn't exist
+  let videoModal = document.getElementById('videoModalLightbox');
+  if (!videoModal) {
+    videoModal = document.createElement('div');
+    videoModal.id = 'videoModalLightbox';
+    videoModal.className = 'video-modal';
+    videoModal.innerHTML = `
+      <div class="video-modal-content">
+        <video class="video-modal-video" controls playsinline></video>
+        <button class="video-modal-close" aria-label="Close">✕</button>
+      </div>
+    `;
+    document.body.appendChild(videoModal);
   }
+  
+  const modalVideo = videoModal.querySelector('.video-modal-video');
+  const modalClose = videoModal.querySelector('.video-modal-close');
+  
+  // Function to open modal
+  const openVideoModal = (videoSrc) => {
+    modalVideo.src = videoSrc;
+    videoModal.classList.add('active');
+    modalVideo.play().catch(err => console.log('Modal video play error:', err));
+  };
+  
+  // Function to close modal
+  const closeVideoModal = () => {
+    videoModal.classList.remove('active');
+    modalVideo.pause();
+    modalVideo.src = '';
+  };
+  
+  // Click to play modal
+  cinemaThumbCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      const videoSrc = card.getAttribute('data-video-src');
+      if (videoSrc) {
+        openVideoModal(videoSrc);
+      }
+    });
+    
+    // Hover preview for desktop
+    if (window.innerWidth > 768) {
+      const imgBox = card.querySelector('.cinema-thumb-img-box');
+      if (imgBox) {
+        let previewVideo = imgBox.querySelector('video');
+        
+        card.addEventListener('mouseenter', () => {
+          if (!previewVideo) {
+            previewVideo = document.createElement('video');
+            previewVideo.className = 'preview-video';
+            previewVideo.muted = true;
+            previewVideo.src = card.getAttribute('data-video-src');
+            imgBox.appendChild(previewVideo);
+          }
+          previewVideo.currentTime = 0;
+          previewVideo.play().catch(err => console.log('Preview play error:', err));
+          imgBox.classList.add('preview-active');
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          if (previewVideo) {
+            previewVideo.pause();
+          }
+          imgBox.classList.remove('preview-active');
+        });
+      }
+    }
+  });
+  
+  // Close modal on click
+  modalClose.addEventListener('click', closeVideoModal);
+  videoModal.addEventListener('click', (e) => {
+    if (e.target === videoModal) closeVideoModal();
+  });
+  
+  // Close on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+      closeVideoModal();
+    }
+  });
 
   // --- 7. Inquiry & Sample Request Modal ---
   const quoteModal = document.getElementById('quoteModal');
@@ -237,23 +320,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 8. Animated Counter Statistics ---
+  // --- 8. Enhanced Animated Counter Statistics with easing ---
   const statNumbers = document.querySelectorAll('.stat-number');
   let animated = false;
+
+  const easeOutQuad = (t) => {
+    return 1 - (1 - t) * (1 - t);
+  };
 
   const animateCounters = () => {
     statNumbers.forEach(stat => {
       const target = +stat.getAttribute('data-target');
-      const count = +stat.innerText.replace('+', '').replace('%', '');
       const suffix = stat.getAttribute('data-suffix') || '';
-      const increment = Math.ceil(target / 40);
+      const duration = 1500; // 1.5 seconds
+      const startTime = Date.now();
 
-      if (count < target) {
-        stat.innerText = Math.min(count + increment, target) + suffix;
-        setTimeout(animateCounters, 40);
-      } else {
-        stat.innerText = target + suffix;
-      }
+      const animate = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeOutQuad(progress);
+        const current = Math.round(target * easedProgress);
+
+        stat.innerText = current + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+
+      animate();
     });
   };
 
@@ -746,6 +841,85 @@ document.addEventListener('DOMContentLoaded', () => {
           simImg.style.opacity = '1';
           simImg.style.transform = 'scale(1)';
         }, 300);
+      });
+    });
+  }
+
+  // --- 21. SMART VIDEO INTERSECTION OBSERVER (AUTO-PAUSE/AUTO-PLAY IN VIEWPORT) ---
+  const allVideos = document.querySelectorAll('video');
+  if ('IntersectionObserver' in window && allVideos.length > 0) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        // Check if video is a preview or should not autoplay (mobile)
+        const isPreview = video.classList.contains('preview-video');
+        const isMobileAutoplay = window.innerWidth <= 768 && entry.target.id === 'heroVideo';
+        
+        if (!entry.isIntersecting) {
+          // Pause when scrolled out of view
+          if (!video.paused) {
+            video.pause();
+            video.dataset.autoPaused = "true";
+          }
+        } else if (entry.isIntersecting && !isPreview && !isMobileAutoplay) {
+          // Auto-play when back in view (unless it's a preview video or hero on mobile)
+          if (!video.paused || (video.dataset.autoPaused === "true" && video.autoplay !== false)) {
+            video.play().catch(err => {
+              console.log('Autoplay error:', err);
+            });
+            video.dataset.autoPaused = "false";
+          }
+        }
+      });
+    }, { threshold: 0.25 });
+
+    allVideos.forEach(v => videoObserver.observe(v));
+  }
+
+  // --- 22. SCROLL FADE-IN ANIMATIONS FOR SECTIONS ---
+  if ('IntersectionObserver' in window) {
+    const fadeInObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // Apply to feature cards, product cards, gallery items, section titles
+    document.querySelectorAll('.feature-card, .product-card, .gallery-item, .section-title, .stats-bar').forEach(el => {
+      fadeInObserver.observe(el);
+    });
+  }
+
+  // --- 24. PINTEREST MASONRY FILTER CONTROLLER ---
+  const pinterestFilterBtns = document.querySelectorAll('.pinterest-filter-btn');
+  const pinterestPins = document.querySelectorAll('.pinterest-pin-card');
+
+  if (pinterestFilterBtns.length > 0 && pinterestPins.length > 0) {
+    pinterestFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        pinterestFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        pinterestPins.forEach(pin => {
+          const category = pin.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            pin.style.display = 'block';
+            setTimeout(() => {
+              pin.style.opacity = '1';
+              pin.style.transform = 'translateY(0) scale(1)';
+            }, 30);
+          } else {
+            pin.style.opacity = '0';
+            pin.style.transform = 'translateY(15px) scale(0.92)';
+            setTimeout(() => {
+              pin.style.display = 'none';
+            }, 250);
+          }
+        });
       });
     });
   }

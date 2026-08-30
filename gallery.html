@@ -33,11 +33,9 @@
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
-          <li><a href="index.html#visualizer" class="nav-link">Visualizer</a></li>
-          <li><a href="index.html#calculator" class="nav-link">Calculator</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
           <li><a href="products.html" class="nav-link">Products</a></li>
-          <li><a href="tech-specs.html" class="nav-link">Tech Specs</a></li>
+          <li><a href="tech-specs.html" class="nav-link">Specs & Calculator</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
         </ul>
 
 
@@ -68,172 +66,396 @@
     </div>
   </section>
 
-  <!-- ==================== VISUAL INSPIRATION GALLERY ==================== -->
-  <section class="section section-dark" id="gallery">
+  <!-- ==================== PINTEREST-STYLE MASONRY GALLERY ==================== -->
+  <section class="section section-dark" id="gallery" style="background: #060a10; padding: 4rem 0;">
     <div class="container">
-      <div class="gallery-grid">
-        <!-- Dynamic Interior Showcase Images (19 Images) -->
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.36 AM.jpeg" data-caption="Royal Teak Wood Fluted TV Unit Accent">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.36 AM.jpeg" alt="Royal Teak Wood Fluted TV Unit Accent">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Royal Teak TV Unit Accent</div>
+      
+      <!-- Pinterest Category Filter Pills -->
+      <div class="pinterest-filter-bar">
+        <button class="pinterest-filter-btn active" data-filter="all">
+          <i class="fa-solid fa-border-all"></i> All 19 Renders
+        </button>
+        <button class="pinterest-filter-btn" data-filter="tv-wall">
+          <i class="fa-solid fa-tv"></i> TV Unit Walls
+        </button>
+        <button class="pinterest-filter-btn" data-filter="gold-louver">
+          <i class="fa-solid fa-gem"></i> Gold Inlay Louvers
+        </button>
+        <button class="pinterest-filter-btn" data-filter="fluted">
+          <i class="fa-solid fa-bars-staggered"></i> Acoustic Fluted
+        </button>
+        <button class="pinterest-filter-btn" data-filter="marble">
+          <i class="fa-solid fa-layer-group"></i> UV Marble Sheets
+        </button>
+        <button class="pinterest-filter-btn" data-filter="bedroom">
+          <i class="fa-solid fa-bed"></i> Bedroom Suites
+        </button>
+      </div>
+
+      <!-- Pinterest Masonry Grid Container -->
+      <div class="pinterest-masonry-grid" id="pinterestMasonry">
+        
+        <!-- Pin 1 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="tv-wall" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.36 AM.jpeg" data-caption="Royal Teak Wood Fluted TV Unit Accent">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.36 AM.jpeg" alt="Royal Teak Wood Fluted TV Unit Accent" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-crown"></i> TV Unit Accent</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Royal Teak Wood Fluted Backdrop</h3>
+              <p class="pin-desc">Deep wood texture realism combined with warm ambient cove backlighting.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-shield-halved"></i> 2G Hot-Melt</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Royal Teak Wood Fluted Backdrop">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.37 AM (1).jpeg" data-caption="Contemporary Gold Strip Fluted Louver Cladding">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.37 AM (1).jpeg" alt="Gold Strip Fluted Louver">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Gold Strip Fluted Louver</div>
+        <!-- Pin 2 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="gold-louver" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.37 AM (1).jpeg" data-caption="Contemporary Gold Strip Fluted Louver Cladding">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.37 AM (1).jpeg" alt="Contemporary Gold Strip Fluted Louver" loading="lazy">
+            <span class="pin-top-badge" style="color: var(--accent-cyan); border-color: rgba(56, 189, 248, 0.4);"><i class="fa-solid fa-gem"></i> Gold Inlay</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Gold Inlay Fluted Louver</h3>
+              <p class="pin-desc">High-density charcoal louver embedded with brush-finished brass gold strips.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-sparkles"></i> Brass Accent</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Gold Inlay Fluted Louver">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.37 AM.jpeg" data-caption="Midnight Slate Grey Acoustic Louver Panel">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.37 AM.jpeg" alt="Midnight Slate Acoustic Louver">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Midnight Slate Acoustic Louver</div>
+        <!-- Pin 3 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="fluted" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.37 AM.jpeg" data-caption="Midnight Slate Grey Acoustic Louver Panel">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.37 AM.jpeg" alt="Midnight Slate Grey Acoustic Louver" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-wave-square"></i> Acoustic Slate</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Midnight Slate Acoustic Wall</h3>
+              <p class="pin-desc">Zero-reflection matte slate panel with integrated noise damping grooves.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-volume-xmark"></i> Sound Proof</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Midnight Slate Acoustic Wall">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM (1).jpeg" data-caption="Master Bedroom Headboard Fluted Backdrop">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM (1).jpeg" alt="Master Bedroom Headboard Backdrop">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Master Bedroom Headboard</div>
+        <!-- Pin 4 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="bedroom" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM (1).jpeg" data-caption="Master Bedroom Headboard Fluted Backdrop">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM (1).jpeg" alt="Master Bedroom Headboard Fluted Backdrop" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-bed"></i> Bedroom Suite</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Master Suite Headboard Cladding</h3>
+              <p class="pin-desc">Tactile fluted louver panel framing the bed with warm ambient cove glow.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-leaf"></i> Zero VOC</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Master Suite Headboard Cladding">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM (2).jpeg" data-caption="Golden Metallic Charcoal Feature Wall">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM (2).jpeg" alt="Golden Metallic Charcoal Wall">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Golden Metallic Charcoal Wall</div>
+        <!-- Pin 5 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="gold-louver" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM (2).jpeg" data-caption="Golden Metallic Charcoal Feature Wall">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM (2).jpeg" alt="Golden Metallic Charcoal Feature Wall" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-gem"></i> Metallic Inlay</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Golden Metallic Charcoal Feature</h3>
+              <p class="pin-desc">Sleek metallic strip highlights set against ultra-dark matte charcoal base.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-fire"></i> B1 Fire Safe</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Golden Metallic Charcoal Feature">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM.jpeg" data-caption="Dark Oak Architectural Louver Ceiling & Wall">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM.jpeg" alt="Dark Oak Architectural Ceiling">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Dark Oak Architectural Ceiling</div>
+        <!-- Pin 6 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="fluted" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM.jpeg" data-caption="Dark Oak Architectural Louver Ceiling & Wall">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.38 AM.jpeg" alt="Dark Oak Architectural Ceiling & Wall" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-layer-group"></i> Wall to Ceiling</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Dark Oak Wall & Ceiling Louvers</h3>
+              <p class="pin-desc">Continuous vertical louver profile transitioning from wall to ceiling seamlessly.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-bug-slash"></i> Termite Proof</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Dark Oak Wall & Ceiling Louvers">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM (1).jpeg" data-caption="Carrara Italian Marble PVC UV Sheet Feature Wall">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM (1).jpeg" alt="Carrara Italian Marble PVC Sheet">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Carrara Italian Marble UV Sheet</div>
+        <!-- Pin 7 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="marble" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM (1).jpeg" data-caption="Carrara Italian Marble PVC UV Sheet Feature Wall">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM (1).jpeg" alt="Carrara Italian Marble PVC UV Sheet" loading="lazy">
+            <span class="pin-top-badge" style="color: var(--accent-cyan); border-color: rgba(56, 189, 248, 0.4);"><i class="fa-solid fa-layer-group"></i> UV Marble</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Carrara Italian UV Marble Sheet</h3>
+              <p class="pin-desc">High-gloss mirror finish Italian marble UV sheet with zero maintenance requirements.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-droplet"></i> 100% Waterproof</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Carrara Italian UV Marble Sheet">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM (2).jpeg" data-caption="Minimalist Modern Living Room Wood Slat Wall">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM (2).jpeg" alt="Minimalist Wood Slat Wall">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Minimalist Wood Slat Wall</div>
+        <!-- Pin 8 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="tv-wall" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM (2).jpeg" data-caption="Minimalist Modern Living Room Wood Slat Wall">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM (2).jpeg" alt="Minimalist Modern Living Room Wood Slat Wall" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-tv"></i> Living Room</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Minimalist Living Slat Backdrop</h3>
+              <p class="pin-desc">Warm natural wood slat panels for modern minimalist living room TV backdrops.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-tree"></i> Wood Grain Realism</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Minimalist Living Slat Backdrop">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM.jpeg" data-caption="Champagne Bronze Metallic Fluted Louver">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM.jpeg" alt="Champagne Bronze Metallic Louver">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Champagne Bronze Metallic Louver</div>
+        <!-- Pin 9 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="gold-louver" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM.jpeg" data-caption="Champagne Bronze Metallic Fluted Louver">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.39 AM.jpeg" alt="Champagne Bronze Metallic Fluted Louver" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-gem"></i> Champagne Bronze</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Champagne Bronze Metallic Louver</h3>
+              <p class="pin-desc">Reflective champagne metallic luster designed for luxury hotel foyers and suites.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-sparkles"></i> High Luster</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Champagne Bronze Metallic Louver">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (1).jpeg" data-caption="Scandinavian Light Natural Oak Fluted Panel">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (1).jpeg" alt="Scandinavian Light Oak Panel">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Scandinavian Light Oak Panel</div>
+        <!-- Pin 10 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="fluted" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (1).jpeg" data-caption="Scandinavian Light Natural Oak Fluted Panel">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (1).jpeg" alt="Scandinavian Light Natural Oak Fluted Panel" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-leaf"></i> Nordic Oak</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Scandinavian Light Oak Panel</h3>
+              <p class="pin-desc">Bright natural oak grain lamination ideal for compact bedroom accent walls.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-shield-halved"></i> 2G Hot-Melt</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Scandinavian Light Oak Panel">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (2).jpeg" data-caption="Executive Reception Desk Fluted Louver Wall">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (2).jpeg" alt="Executive Reception Desk Wall">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Executive Reception Wall</div>
+        <!-- Pin 11 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="tv-wall" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (2).jpeg" data-caption="Executive Reception Desk Fluted Louver Wall">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (2).jpeg" alt="Executive Reception Desk Fluted Louver Wall" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-building"></i> Commercial Foyer</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Executive Reception Wall Cladding</h3>
+              <p class="pin-desc">Professional acoustic fluted louvers engineered for corporate foyer accent walls.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-briefcase"></i> Commercial Grade</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Executive Reception Wall Cladding">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (3).jpeg" data-caption="Architectural Linear Cove Ceiling Louvers">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (3).jpeg" alt="Architectural Cove Ceiling Louvers">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Architectural Cove Ceiling</div>
+        <!-- Pin 12 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="marble" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (3).jpeg" data-caption="Architectural Linear Cove Ceiling Louvers">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM (3).jpeg" alt="Architectural Linear Cove Ceiling Louvers" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-lightbulb"></i> Cove LED Ceiling</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Architectural Cove Ceiling Louvers</h3>
+              <p class="pin-desc">Specially profiled ceiling louvers integrated with hidden LED cove light troughs.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-sun"></i> Integrated LED</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Architectural Cove Ceiling Louvers">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM.jpeg" data-caption="Smoked Charcoal Gold Trim Wall Panel">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM.jpeg" alt="Smoked Charcoal Gold Trim Panel">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Smoked Charcoal Gold Trim</div>
+        <!-- Pin 13 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="gold-louver" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM.jpeg" data-caption="Smoked Charcoal Gold Trim Wall Panel">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.40 AM.jpeg" alt="Smoked Charcoal Gold Trim Wall Panel" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-gem"></i> Smoked Gold Trim</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Smoked Charcoal Gold Trim Louver</h3>
+              <p class="pin-desc">Matte charcoal louver background with warm golden metallic vertical dividers.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-award"></i> 25-Year Guarantee</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Smoked Charcoal Gold Trim Louver">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM (1).jpeg" data-caption="Modern Dining Feature Wall Louver">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM (1).jpeg" alt="Dining Feature Wall Louver">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Dining Feature Wall Louver</div>
+        <!-- Pin 14 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="fluted" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM (1).jpeg" data-caption="Modern Dining Feature Wall Louver">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM (1).jpeg" alt="Modern Dining Feature Wall Louver" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-utensils"></i> Dining Accent</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Dining Room Feature Louver Wall</h3>
+              <p class="pin-desc">Elegant vertical texture paneling resistant to food stains and humidity.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-hand-sparkles"></i> Stain Proof</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Dining Room Feature Louver Wall">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM (2).jpeg" data-caption="Luxury Villa Entryway Fluted Louver">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM (2).jpeg" alt="Luxury Villa Entryway Louver">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Villa Entry Foyer Louvers</div>
+        <!-- Pin 15 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="tv-wall" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM (2).jpeg" data-caption="Luxury Villa Entryway Fluted Louver">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM (2).jpeg" alt="Luxury Villa Entryway Fluted Louver" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-house"></i> Villa Foyer</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Luxury Villa Entry Foyer Louvers</h3>
+              <p class="pin-desc">Grand entrance wall feature crafted from high-density termite-proof PVC louvers.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-bug-slash"></i> Termite Free</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Luxury Villa Entry Foyer Louvers">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM.jpeg" data-caption="Geometric Acoustic PVC Slat Wall">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM.jpeg" alt="Geometric Acoustic Slat Wall">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Geometric Acoustic Slat Wall</div>
+        <!-- Pin 16 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="fluted" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM.jpeg" data-caption="Geometric Acoustic PVC Slat Wall">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.41 AM.jpeg" alt="Geometric Acoustic PVC Slat Wall" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-wave-square"></i> Acoustic Geometry</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Geometric Acoustic Slat Wall</h3>
+              <p class="pin-desc">Noise-dampening fluted geometry ideal for home theatres and studio spaces.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-sliders"></i> Noise Dampening</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Geometric Acoustic Slat Wall">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM (1).jpeg" data-caption="Natural Teak Vertical Fluted Panel">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM (1).jpeg" alt="Natural Teak Vertical Fluted Panel">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Natural Teak Fluted Wall</div>
+        <!-- Pin 17 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="tv-wall" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM (1).jpeg" data-caption="Natural Teak Vertical Fluted Panel">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM (1).jpeg" alt="Natural Teak Vertical Fluted Panel" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-tree"></i> Natural Teak</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Natural Teak Vertical Fluted Wall</h3>
+              <p class="pin-desc">Classic warm teak wood tone extruded with ultra-precise surface grain depth.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-sun"></i> UV Protected</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Natural Teak Vertical Fluted Wall">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM (2).jpeg" data-caption="Luxury Lounge Bar Fluted Gold Louver">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM (2).jpeg" alt="Lounge Bar Gold Louver">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Lounge Bar Gold Louvers</div>
+        <!-- Pin 18 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="gold-louver" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM (2).jpeg" data-caption="Luxury Lounge Bar Fluted Gold Louver">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM (2).jpeg" alt="Luxury Lounge Bar Fluted Gold Louver" loading="lazy">
+            <span class="pin-top-badge"><i class="fa-solid fa-martini-glass-citrus"></i> Lounge Bar</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Lounge Bar Gold Inlay Louvers</h3>
+              <p class="pin-desc">Dramatic dark backdrop accented with lustrous metallic gold vertical strips.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-star"></i> 2G Hot-Melt</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Lounge Bar Gold Inlay Louvers">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item trigger-lightbox" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM.jpeg" data-caption="Custom Master Bed Acoustic Fluted Wall">
-          <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM.jpeg" alt="Master Bed Acoustic Fluted Wall">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Master Bed Acoustic Wall</div>
+        <!-- Pin 19 -->
+        <div class="pinterest-pin-card trigger-lightbox" data-category="bedroom" data-img-src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM.jpeg" data-caption="Custom Master Bed Acoustic Fluted Wall">
+          <div class="pin-img-wrapper">
+            <img src="interior dynamic graphis/WhatsApp Image 2026-08-29 at 11.11.42 AM.jpeg" alt="Custom Master Bed Acoustic Fluted Wall" loading="lazy">
+            <span class="pin-top-badge" style="color: var(--accent-gold);"><i class="fa-solid fa-crown"></i> Masterpiece Suite</span>
+            <button class="pin-quick-zoom" title="Quick Zoom"><i class="fa-solid fa-expand"></i></button>
+            <div class="pin-details-overlay">
+              <h3 class="pin-title">Bespoke Master Suite Fluted Cladding</h3>
+              <p class="pin-desc">Architectural bedroom backdrop engineered with 2G hot-melt lamination for lifetime durability.</p>
+              <div class="pin-action-bar">
+                <span class="pin-spec-text"><i class="fa-solid fa-trophy"></i> Masterpiece</span>
+                <button class="pin-quote-btn open-quote-modal" data-product-name="Bespoke Master Suite Fluted Cladding">
+                  <i class="fa-brands fa-whatsapp"></i> Get Swatch
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Original Gallery Items -->
-        <div class="gallery-item trigger-lightbox" data-img-src="image file/WhatsApp Image 2026-08-25 at 11.54.47 AM.jpeg" data-caption="Modern TV Unit Backdrop with Solid PVC Louvers & LED Strip Lighting">
-          <img src="image file/WhatsApp Image 2026-08-25 at 11.54.47 AM.jpeg" alt="TV Unit Backdrop Design">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">TV Unit Feature Wall</div>
-          </div>
-        </div>
-
-        <div class="gallery-item trigger-lightbox" data-img-src="image file/WhatsApp Image 2026-08-25 at 11.54.47 AM (1).jpeg" data-caption="Contemporary Dining Room Accent Wall with Metallic Fluted Louvers">
-          <img src="image file/WhatsApp Image 2026-08-25 at 11.54.47 AM (1).jpeg" alt="Dining Room Accent Wall">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Dining Accent Wall</div>
-          </div>
-        </div>
-
-        <div class="gallery-item trigger-lightbox" data-img-src="image file/WhatsApp Image 2026-08-25 at 11.54.47 AM (2).jpeg" data-caption="Corporate Executive Office Partition & Wall Cladding">
-          <img src="image file/WhatsApp Image 2026-08-25 at 11.54.47 AM (2).jpeg" alt="Corporate Office Cladding">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Corporate Office Cladding</div>
-          </div>
-        </div>
-
-        <div class="gallery-item trigger-lightbox" data-img-src="image file/WhatsApp Image 2026-08-25 at 11.54.48 AM.jpeg" data-caption="Luxury Master Bedroom Headboard Back Wall with Golden Trim Louver">
-          <img src="image file/WhatsApp Image 2026-08-25 at 11.54.48 AM.jpeg" alt="Master Bedroom Headboard Wall">
-          <div class="gallery-overlay">
-            <div class="gallery-caption">Bedroom Headboard Design</div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
